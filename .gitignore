@@ -1,0 +1,7 @@
+node_modules/
+.DS_*
+*.log
+logs
+.next
+.env
+.env.build

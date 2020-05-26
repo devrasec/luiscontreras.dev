@@ -1,0 +1,10 @@
+{
+  "name": "luiscontreras.dev",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Luis's Personal Website",
+  "main": "n/a",
+  "repository": "github:devrasec/luiscontreras.dev",
+  "author": "Luis Contreras <one.tmac@gmail.com> (https://luiscontreras.dev)",
+  "license": "MIT"
+}
