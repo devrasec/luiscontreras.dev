@@ -26,27 +26,31 @@ const GlobalStyle = createGlobalStyle`
 
   h1 {
     margin-top: 0;
-    font-size: ${themeGet('fontSizes.7')};
-  }
-
-  h2 {
     font-size: ${themeGet('fontSizes.6')};
   }
 
-  h3 {
+  h2 {
     font-size: ${themeGet('fontSizes.5')};
   }
 
-  h4 {
+  h3 {
     font-size: ${themeGet('fontSizes.4')};
   }
 
-  h5 {
+  h4 {
     font-size: ${themeGet('fontSizes.3')};
+  }
+
+  h5 {
+    font-size: ${themeGet('fontSizes.2')};
   }
 
   p {
     margin-bottom: ${themeGet('lineHeights.heading')}rem;
+  }
+
+  small {
+    font-size: ${themeGet('fontSizes.sm')};
   }
 `;
 
