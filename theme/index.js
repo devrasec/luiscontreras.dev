@@ -30,6 +30,7 @@ export const space = {
   xxs: '0.25rem',
   xs: '0.5rem',
   sm: '0.75rem',
+  default: '1rem',
   md: '1.25rem',
   lg: '2rem',
   xl: '3.25',
@@ -54,5 +55,9 @@ export default {
     body: 400,
     heading: 700,
     bold: 700,
+  },
+
+  shadows: {
+    subtle: '2px 2px 15px rgba(0, 0, 0, 0.07)',
   },
 };
