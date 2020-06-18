@@ -1,3 +1,6 @@
 {
-  "extends": ["contreras"]
+  "extends": ["contreras"],
+  "rules": {
+    "react/prop-types": "off"
+  }
 }
