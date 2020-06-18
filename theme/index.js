@@ -14,6 +14,9 @@ export const colors = {
   red: '#FF2047',
 };
 
+colors.primary = colors.blue.dark;
+colors.secondary = colors.orange;
+
 export const fonts = {
   body: '"Raleway", -apple-system, BlinkMacSystemFont, sans-serif',
   heading: '"Montserrat", -apple-system, BlinkMacSystemFont, sans-serif',
@@ -33,7 +36,7 @@ export const space = {
   default: '1rem',
   md: '1.25rem',
   lg: '2rem',
-  xl: '3.25',
+  xl: '3.25rem',
   xxl: '5.25rem',
 };
 

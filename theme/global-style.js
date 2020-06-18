@@ -5,6 +5,12 @@ import { normalize } from 'polished';
 const GlobalStyle = createGlobalStyle`
   ${normalize()};
 
+  *,
+  ::after,
+  ::before {
+    box-sizing: border-box;
+  }
+
   html {
     font-size: 100%;
   }
@@ -17,7 +23,11 @@ const GlobalStyle = createGlobalStyle`
     color: ${themeGet('textColor')};
   }
 
-  h1, h2, h3, h4, h5 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
     margin: 2.75rem 0 1.05rem;
     font-family: ${themeGet('fonts.heading')};
     font-weight: ${themeGet('fontWeights.heading')};
