@@ -12,7 +12,7 @@ const barColor = 'colors.primary';
 const barStyles = css`
   background-color: ${themeGet(barColor)};
   height: ${barHeight};
-  left: 0;
+  right: 10px;
   position: absolute;
   width: ${barWidth};
   transition: all 200ms ease-in-out;
@@ -20,23 +20,30 @@ const barStyles = css`
 
 const MenuIcon = styled.div`
   ${barStyles};
-  top: 10px;
+  top: 20px;
   ${props => props.isToggleOn && `background-color: transparent`};
 
   ::before,
   ::after {
     ${barStyles};
+    right: 0;
     content: '';
   }
 
   ::before {
     top: -10px;
-    ${props => (props.isToggleOn ? `transform: rotate(45deg); top: 0;` : `transform: rotate(0)`)}
+    ${props =>
+      props.isToggleOn
+        ? `transform: rotate(45deg); top: 0; background-color: white;`
+        : `transform: rotate(0);`};
   }
 
   ::after {
     top: 10px;
-    ${props => (props.isToggleOn ? `transform: rotate(-45deg); top: 0;` : `transform: rotate(0)`)}
+    ${props =>
+      props.isToggleOn
+        ? `transform: rotate(-45deg); top: 0; background-color: white;`
+        : `transform: rotate(0)`}
   }
 `;
 
@@ -76,32 +83,48 @@ const MenuOverlay = styled.div`
   }
 `;
 
+const toggleButtonActiveColor = 'colors.primary';
+
+const ToggleButton = styled.button`
+  background: transparent;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  height: 44px;
+  padding: 10px;
+  background: ${props =>
+    props.isToggleOn ? themeGet(toggleButtonActiveColor)(props) : 'transparent'};
+
+  ${props =>
+    props.isToggleOn &&
+    `
+    span {
+      color: white;
+    }
+  `};
+`;
+
 const MainNav = () => {
   const [isToggleOn, setToggle] = useState(false);
   const toggleMenu = () => setToggle(!isToggleOn);
 
   return (
     <>
-      <button
-        onClick={toggleMenu}
-        css={`
-          background: transparent;
-          border: none;
-          position: relative;
-          cursor: pointer;
-          width: ${barWidth};
-          height: 24px;
-          :hover,
-          :focus {
-            background: transparent;
-            border: none;
-            outline: none;
-          }
-        `}
-        type="button"
-      >
+      <ToggleButton isToggleOn={isToggleOn} onClick={toggleMenu} type="button">
+        <span
+          css={`
+            text-transform: uppercase;
+            line-height: 23px;
+            margin-right: ${themeGet('space.default')};
+            font-weight: ${themeGet('fontWeights.bold')};
+            color: ${themeGet('colors.primary')};
+            padding-right: ${barWidth};
+          `}
+        >
+          Menu
+        </span>
         <MenuIcon isToggleOn={isToggleOn} />
-      </button>
+      </ToggleButton>
 
       {isToggleOn && (
         <MenuOverlay>
