@@ -3,6 +3,8 @@ import styled, { css } from 'styled-components';
 import { themeGet } from '@styled-system/theme-get';
 import Link from 'next/link';
 
+import SocialLinks from './social-links';
+
 const barHeight = '4px';
 const barWidth = '40px';
 const barColor = 'colors.primary';
@@ -38,37 +40,37 @@ const MenuIcon = styled.div`
   }
 `;
 
-const MenuLinks = styled.nav`
+const MenuOverlay = styled.div`
   width: 100vw;
   height: calc(100vh - 80px);
   position: absolute;
   left: 0;
   top: 80px;
   background: ${themeGet('colors.secondary')};
-  display: flex;
-  justify-content: center;
   padding-top: ${themeGet('space.xl')};
 
-  > ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-    font-size: ${themeGet('fontSizes.3')};
-    font-family: ${themeGet('fonts.heading')};
-    font-weight: ${themeGet('fontWeights.bold')};
+  nav {
+    > ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      text-align: center;
+      font-size: ${themeGet('fontSizes.3')};
+      font-family: ${themeGet('fonts.heading')};
+      font-weight: ${themeGet('fontWeights.bold')};
 
-    li {
-      margin-bottom: ${themeGet('space.default')};
-    }
+      li {
+        margin-bottom: ${themeGet('space.default')};
+      }
 
-    a {
-      color: ${themeGet('colors.white')};
-      text-decoration: none;
-      transition: color 200ms ease-in-out;
+      a {
+        color: ${themeGet('colors.white')};
+        text-decoration: none;
+        transition: color 200ms ease-in-out;
 
-      &:hover {
-        color: ${themeGet('colors.primary')};
+        &:hover {
+          color: ${themeGet('colors.primary')};
+        }
       }
     }
   }
@@ -102,35 +104,39 @@ const MainNav = () => {
       </button>
 
       {isToggleOn && (
-        <MenuLinks>
-          <ul>
-            <li>
-              <Link href="/">
-                <a>Home</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/blog">
-                <a>Blog</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/about">
-                <a>About</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/uses">
-                <a>Uses</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/contact">
-                <a>Contact</a>
-              </Link>
-            </li>
-          </ul>
-        </MenuLinks>
+        <MenuOverlay>
+          <nav>
+            <ul>
+              <li>
+                <Link href="/">
+                  <a>Home</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog">
+                  <a>Blog</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/about">
+                  <a>About</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/uses">
+                  <a>Uses</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact">
+                  <a>Contact</a>
+                </Link>
+              </li>
+            </ul>
+          </nav>
+
+          <SocialLinks />
+        </MenuOverlay>
       )}
     </>
   );
