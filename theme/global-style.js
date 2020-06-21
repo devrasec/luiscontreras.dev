@@ -5,6 +5,17 @@ import { normalize } from 'polished';
 const GlobalStyle = createGlobalStyle`
   ${normalize()};
 
+  *,
+  ::after,
+  ::before {
+    box-sizing: border-box;
+  }
+
+  :focus {
+    outline: none;
+    box-shadow: 0 0 0 3px ${themeGet('colors.orange')};
+  }
+
   html {
     font-size: 100%;
   }
@@ -17,7 +28,11 @@ const GlobalStyle = createGlobalStyle`
     color: ${themeGet('textColor')};
   }
 
-  h1, h2, h3, h4, h5 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
     margin: 2.75rem 0 1.05rem;
     font-family: ${themeGet('fonts.heading')};
     font-weight: ${themeGet('fontWeights.heading')};
@@ -26,27 +41,31 @@ const GlobalStyle = createGlobalStyle`
 
   h1 {
     margin-top: 0;
-    font-size: ${themeGet('fontSizes.7')};
-  }
-
-  h2 {
     font-size: ${themeGet('fontSizes.6')};
   }
 
-  h3 {
+  h2 {
     font-size: ${themeGet('fontSizes.5')};
   }
 
-  h4 {
+  h3 {
     font-size: ${themeGet('fontSizes.4')};
   }
 
-  h5 {
+  h4 {
     font-size: ${themeGet('fontSizes.3')};
+  }
+
+  h5 {
+    font-size: ${themeGet('fontSizes.2')};
   }
 
   p {
     margin-bottom: ${themeGet('lineHeights.heading')}rem;
+  }
+
+  small {
+    font-size: ${themeGet('fontSizes.sm')};
   }
 `;
 

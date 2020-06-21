@@ -14,28 +14,29 @@ export const colors = {
   red: '#FF2047',
 };
 
+colors.primary = colors.blue.dark;
+colors.secondary = colors.orange;
+
 export const fonts = {
   body: '"Raleway", -apple-system, BlinkMacSystemFont, sans-serif',
   heading: '"Montserrat", -apple-system, BlinkMacSystemFont, sans-serif',
 };
 
-export const fontSizes = [0.5, 0.707, 1, 1.414, 1.999, 2.827, 3.998, 5.653].map(
-  value => `${value}rem`
-);
+export const fontSizes = [0.707, 1, 1.414, 1.999, 2.827, 3.998, 5.653].map(value => `${value}rem`);
 
-const [textSizeXs, textSizeSm, textSize] = fontSizes;
+const [textSizeSm, textSize] = fontSizes;
 fontSizes.body = textSize;
 fontSizes.sm = textSizeSm;
-fontSizes.xs = textSizeXs;
 
 // Fibonacci scale :)
 export const space = {
   xxs: '0.25rem',
   xs: '0.5rem',
   sm: '0.75rem',
+  default: '1rem',
   md: '1.25rem',
   lg: '2rem',
-  xl: '3.25',
+  xl: '3.25rem',
   xxl: '5.25rem',
 };
 
@@ -57,5 +58,9 @@ export default {
     body: 400,
     heading: 700,
     bold: 700,
+  },
+
+  shadows: {
+    subtle: '2px 2px 15px rgba(0, 0, 0, 0.07)',
   },
 };
