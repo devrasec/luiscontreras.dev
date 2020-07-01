@@ -45,7 +45,6 @@ export default {
   fonts,
   fontSizes,
   space,
-
   textColor: colors.black,
   bgColor: colors.white,
 
