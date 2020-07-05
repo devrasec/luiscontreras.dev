@@ -4,6 +4,7 @@ import { themeGet } from '@styled-system/theme-get';
 import Link from 'next/link';
 
 import SocialLinks from './social-links';
+import { tablet } from '../lib/breakpoints';
 
 const barHeight = '4px';
 const barWidth = '40px';
@@ -49,12 +50,16 @@ const MenuIcon = styled.div`
 
 const MenuOverlay = styled.div`
   width: 100vw;
-  height: calc(100vh - 80px);
+  height: calc(100vh - 60px);
   position: absolute;
   left: 0;
-  top: 80px;
+  top: 60px;
   background: ${themeGet('colors.secondary')};
   padding-top: ${themeGet('space.xl')};
+  ${tablet} {
+    height: calc(100vh - 80px);
+    top: 80px;
+  }
 
   nav {
     > ul {

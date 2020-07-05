@@ -1,3 +1,4 @@
+/* eslint-disable prefer-destructuring */
 export const colors = {
   blue: {
     default: '#3A89C9',
@@ -24,9 +25,9 @@ export const fonts = {
 
 export const fontSizes = [0.707, 1, 1.414, 1.999, 2.827, 3.998, 5.653].map(value => `${value}rem`);
 
-const [textSizeSm, textSize] = fontSizes;
-fontSizes.body = textSize;
-fontSizes.sm = textSizeSm;
+fontSizes.sm = fontSizes[0];
+fontSizes.body = fontSizes[1];
+fontSizes.big = fontSizes[6];
 
 // Fibonacci scale :)
 export const space = {
