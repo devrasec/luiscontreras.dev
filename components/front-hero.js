@@ -2,11 +2,12 @@ import styled from 'styled-components';
 import { themeGet } from '@styled-system/theme-get';
 
 import { untilDesktop, desktop, tablet, mobilePlus } from '../lib/breakpoints';
+import SocialLinks from './social-links';
 
 const HeroStyles = styled.section`
   height: calc(100vh - 60px);
   background: url('/images/hero-bg.jpg') no-repeat top center / cover;
-  color: #ffffff;
+  color: ${themeGet('colors.white')};
   min-height: 560px;
   padding-top: 58px;
   ${tablet} {
@@ -80,6 +81,19 @@ const HeroContent = styled.div`
   }
 `;
 
+const SocialLinksStyled = styled(SocialLinks)`
+  justify-content: flex-start;
+  padding-top: 0;
+
+  a {
+    color: ${themeGet('colors.white')};
+
+    &:hover {
+      color: ${themeGet('colors.secondary')};
+    }
+  }
+`;
+
 const FrontHero = () => (
   <HeroStyles>
     <HeroContent>
@@ -94,6 +108,8 @@ const FrontHero = () => (
           Detail-oriented and passionate Software Engineer based in Stockholm, Sweden. Highly
           experienced in Javascript and React.
         </p>
+
+        <SocialLinksStyled />
       </div>
     </HeroContent>
   </HeroStyles>

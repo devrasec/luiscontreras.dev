@@ -35,7 +35,7 @@ const MenuIcon = styled.div`
     top: -10px;
     ${props =>
       props.isToggleOn
-        ? `transform: rotate(45deg); top: 0; background-color: white;`
+        ? `transform: rotate(45deg); top: 0; background-color: #ffffff;`
         : `transform: rotate(0);`};
   }
 
@@ -43,7 +43,7 @@ const MenuIcon = styled.div`
     top: 10px;
     ${props =>
       props.isToggleOn
-        ? `transform: rotate(-45deg); top: 0; background-color: white;`
+        ? `transform: rotate(-45deg); top: 0; background-color: #ffffff;`
         : `transform: rotate(0)`}
   }
 `;
@@ -104,7 +104,7 @@ const ToggleButton = styled.button`
     props.isToggleOn &&
     `
     span {
-      color: white;
+      color: #ffffff;
     }
   `};
 `;
