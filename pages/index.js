@@ -1,8 +1,9 @@
 import Layout from '../components/layout';
+import FrontHero from '../components/front-hero';
 
 const HomePage = () => (
   <Layout>
-    <div>This is my Homepage, welcome!</div>
+    <FrontHero />
   </Layout>
 );
 

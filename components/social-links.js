@@ -31,8 +31,8 @@ const SocialLinksStyles = styled.div`
   }
 `;
 
-const SocialLinks = () => (
-  <SocialLinksStyles>
+const SocialLinks = ({ className }) => (
+  <SocialLinksStyles className={className}>
     <IconContext.Provider value={{ size: '2rem' }}>
       <a href={socialLinks.twitter} {...commonLinkProps}>
         <FaTwitter />
