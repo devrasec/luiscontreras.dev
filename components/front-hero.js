@@ -152,7 +152,7 @@ const FrontHero = () => (
         <SocialLinksStyled />
 
         <div className="hero-foot">
-          <Button>Say Hello</Button>
+          <Button variant="secondary">Say Hello</Button>
           <Link href="/about">
             <a>Or click here to know more about me</a>
           </Link>

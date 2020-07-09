@@ -15,6 +15,19 @@ const primaryStyles = css`
   }
 `;
 
+const secondaryStyles = css`
+  background: ${themeGet('colors.secondary')};
+
+  &:hover,
+  &:focus {
+    background: ${props => setLightness(0.73, themeGet('colors.secondary')(props))};
+  }
+
+  &:active {
+    background: ${props => setLightness(0.53, themeGet('colors.secondary')(props))};
+  }
+`;
+
 const ButtonStyles = styled.button`
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -39,6 +52,8 @@ const ButtonStyles = styled.button`
 
   ${props => {
     switch (props.variant) {
+      case 'secondary':
+        return secondaryStyles;
       case 'primary':
       default:
         return primaryStyles;
