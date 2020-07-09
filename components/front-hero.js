@@ -1,18 +1,20 @@
 import styled from 'styled-components';
 import { themeGet } from '@styled-system/theme-get';
+import Link from 'next/link';
 
 import { untilDesktop, desktop, tablet, mobilePlus } from '../lib/breakpoints';
 import SocialLinks from './social-links';
+import Button from './button';
 
-const HeroStyles = styled.section`
-  height: calc(100vh - 60px);
+const Hero = styled.section`
+  min-height: calc(100vh - 60px);
   background: url('/images/hero-bg.jpg') no-repeat top center / cover;
   color: ${themeGet('colors.white')};
-  min-height: 560px;
   padding-top: 58px;
+  padding-bottom: ${themeGet('space.lg')};
   ${tablet} {
     padding-top: 148px;
-    height: calc(100vh - 80px);
+    min-height: calc(100vh - 80px);
   }
 `;
 
@@ -79,11 +81,46 @@ const HeroContent = styled.div`
       }
     }
   }
+
+  .hero-foot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column wrap;
+
+    button {
+      margin-bottom: ${themeGet('space.default')};
+    }
+
+    ${mobilePlus} {
+      flex-direction: row;
+      button {
+        margin-right: ${themeGet('space.default')};
+        margin-bottom: 0;
+      }
+    }
+
+    ${tablet} {
+      justify-content: flex-start;
+    }
+
+    a {
+      color: ${themeGet('colors.white')};
+      font-weight: ${themeGet('fontWeights.bold')};
+      text-decoration: underline;
+      &:hover {
+        color: ${themeGet('colors.secondary')};
+      }
+    }
+  }
 `;
 
 const SocialLinksStyled = styled(SocialLinks)`
-  justify-content: flex-start;
   padding-top: 0;
+  margin-bottom: ${themeGet('space.md')};
+  ${tablet} {
+    justify-content: flex-start;
+  }
 
   a {
     color: ${themeGet('colors.white')};
@@ -95,7 +132,7 @@ const SocialLinksStyled = styled(SocialLinks)`
 `;
 
 const FrontHero = () => (
-  <HeroStyles>
+  <Hero>
     <HeroContent>
       <div className="hero-avatar">
         <img src="/images/avatar.jpg" srcSet="/images/avatar@2x.jpg 2x" alt="Luis Contreras" />
@@ -110,9 +147,16 @@ const FrontHero = () => (
         </p>
 
         <SocialLinksStyled />
+
+        <div className="hero-foot">
+          <Button>Say Hello</Button>
+          <Link href="/about">
+            <a>Or click here to know more about me</a>
+          </Link>
+        </div>
       </div>
     </HeroContent>
-  </HeroStyles>
+  </Hero>
 );
 
 export default FrontHero;

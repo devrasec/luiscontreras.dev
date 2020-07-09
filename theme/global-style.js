@@ -60,6 +60,11 @@ const GlobalStyle = createGlobalStyle`
     font-size: ${themeGet('fontSizes.2')};
   }
 
+  a {
+    color: ${themeGet('colors.secondary')};
+    text-decoration: none;
+  }
+
   p {
     margin-bottom: ${themeGet('lineHeights.heading')}rem;
   }
