@@ -2,17 +2,20 @@ import styled from 'styled-components';
 import { themeGet } from '@styled-system/theme-get';
 import Link from 'next/link';
 
-import { untilDesktop, desktop, tablet, mobilePlus } from '../lib/breakpoints';
+import { untilDesktop, desktop, tablet, mobilePlus, large } from '../lib/breakpoints';
 import SocialLinks from './social-links';
 import Button from './button';
 
 const Hero = styled.section`
-  min-height: calc(100vh - 60px);
   background: url('/images/hero-bg.jpg') no-repeat top center / cover;
   color: ${themeGet('colors.white')};
   padding-top: 58px;
   padding-bottom: ${themeGet('space.lg')};
   ${tablet} {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  ${large} {
     padding-top: 148px;
     min-height: calc(100vh - 80px);
   }
