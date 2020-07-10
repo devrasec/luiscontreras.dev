@@ -12,9 +12,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "lint:fix": "eslint . --fix"
   },
   "dependencies": {
     "@styled-system/theme-get": "^5.1.2",
@@ -26,11 +24,7 @@
     "styled-components": "^5.1.1"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^5.3.19",
-    "@storybook/addons": "^5.3.19",
-    "@storybook/react": "^5.3.19",
     "babel-eslint": "^10.1.0",
-    "babel-loader": "^8.1.0",
     "babel-plugin-styled-components": "^1.10.7",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.1.0",
