@@ -66,8 +66,12 @@ const GlobalStyle = createGlobalStyle`
   }
 
   a {
-    color: ${themeGet('colors.secondary')};
-    text-decoration: none;
+    color: ${themeGet('colors.blue.default')};
+    text-decoration: underline;
+    text-decoration-color: ${themeGet('colors.primary')};
+    &:hover {
+      color: ${themeGet('colors.secondary')};
+    }
   }
 
   p {
@@ -77,6 +81,11 @@ const GlobalStyle = createGlobalStyle`
 
   small {
     font-size: ${themeGet('fontSizes.sm')};
+  }
+
+  b,
+  strong {
+    font-weight: ${themeGet('fontWeights.bold')};
   }
 `;
 

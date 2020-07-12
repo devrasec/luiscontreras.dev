@@ -1,14 +1,9 @@
 import styled from 'styled-components';
 import { themeGet } from '@styled-system/theme-get';
 import PostDate from './styles/post-date';
+import TeaserHeading from './styles/teaser-heading';
 
 const PostTeaserStyles = styled.div`
-  h3 {
-    color: ${themeGet('colors.secondary')};
-    font-size: ${themeGet('fontSizes.2')};
-    margin-top: 0;
-  }
-
   ${PostDate} {
     display: inline-block;
     margin-bottom: ${themeGet('space.xxs')};
@@ -20,7 +15,7 @@ const PostTeaser = ({ post, className }) => {
 
   return (
     <PostTeaserStyles className={className}>
-      <h3>{title}</h3>
+      <TeaserHeading>{title}</TeaserHeading>
       <PostDate>{date}</PostDate>
       <p>{intro}</p>
     </PostTeaserStyles>
