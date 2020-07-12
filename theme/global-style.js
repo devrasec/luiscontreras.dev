@@ -16,6 +16,11 @@ const GlobalStyle = createGlobalStyle`
     box-shadow: 0 0 0 3px ${themeGet('colors.orange')};
   }
 
+  ::selection {
+    background-color: ${themeGet('colors.secondary')};
+    color: ${themeGet('colors.primary')};
+  }
+
   html {
     font-size: 100%;
   }
