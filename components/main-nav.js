@@ -49,7 +49,7 @@ const MenuIcon = styled.div`
 `;
 
 const MenuOverlay = styled.div`
-  width: 100vw;
+  width: 100%;
   height: calc(100vh - 60px);
   position: absolute;
   left: 0;
