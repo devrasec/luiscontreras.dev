@@ -26,6 +26,8 @@ const Heading = styled.h1`
   font-weight: ${themeGet('fontWeights.heading')};
   line-height: ${themeGet('lineHeights.heading')};
   ${({ as }) => (!as || as === 'h1') && 'margin-top: 0'};
+  color: ${({ textColor, theme }) =>
+    themeGet(textColor ? `colors.${textColor}` : 'textColor')({ theme })};
 `;
 
 export default Heading;

@@ -33,38 +33,6 @@ const GlobalStyle = createGlobalStyle`
     color: ${themeGet('textColor')};
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5 {
-    margin: 2.75rem 0 1.05rem;
-    font-family: ${themeGet('fonts.heading')};
-    font-weight: ${themeGet('fontWeights.heading')};
-    line-height: ${themeGet('lineHeights.heading')};
-  }
-
-  h1 {
-    margin-top: 0;
-    font-size: ${themeGet('fontSizes.6')};
-  }
-
-  h2 {
-    font-size: ${themeGet('fontSizes.5')};
-  }
-
-  h3 {
-    font-size: ${themeGet('fontSizes.4')};
-  }
-
-  h4 {
-    font-size: ${themeGet('fontSizes.3')};
-  }
-
-  h5 {
-    font-size: ${themeGet('fontSizes.2')};
-  }
-
   a {
     color: ${themeGet('colors.blue.default')};
     text-decoration: underline;

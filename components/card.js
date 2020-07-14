@@ -14,7 +14,6 @@ const CardStyles = styled.div`
   }
 
   h2 {
-    color: ${themeGet('colors.primary')};
     margin-top: 0;
     display: flex;
     align-items: center;
@@ -37,7 +36,7 @@ const CardStyles = styled.div`
 
 const Card = ({ heading, children, icon: Icon }) => (
   <CardStyles>
-    <Heading as="h2">
+    <Heading as="h2" textColor="primary">
       {Icon && (
         <span>
           <Icon />
