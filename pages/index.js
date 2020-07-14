@@ -6,12 +6,13 @@ import FrontHero from '../components/front-hero';
 import Container from '../components/container';
 import { desktop } from '../lib/breakpoints';
 import Card from '../components/card';
-import PostTeaserBase from '../components/post-teaser';
+import BasePostTeaser from '../components/post-teaser';
 import Button from '../components/button';
 import TeaserHeading from '../components/styles/teaser-heading';
 import PostDate from '../components/styles/post-date';
+import Heading from '../components/primitives/heading';
 
-const PostTeaser = styled(PostTeaserBase)``;
+const PostTeaser = styled(BasePostTeaser)``;
 
 const Section = styled.section`
   margin: ${themeGet('space.xl')} 0;
@@ -44,6 +45,22 @@ const TalkStyles = styled.div`
       color: ${themeGet('colors.secondary')};
       margin-right: ${themeGet('space.xs')};
     }
+  }
+`;
+
+const ContactCalloutStyles = styled(Section)`
+  background: ${themeGet('colors.gray.light')};
+  text-align: center;
+  padding: ${themeGet('space.xl')} 0;
+  margin-bottom: 0;
+  ${desktop} {
+    padding: ${themeGet('space.xxl')} 0;
+    margin-bottom: 0;
+  }
+
+  ${Heading} {
+    margin-top: 0;
+    margin-bottom: ${themeGet('space.lg')};
   }
 `;
 
@@ -136,6 +153,15 @@ const HomePage = () => (
         </Card>
       </Section>
     </Container>
+
+    <ContactCalloutStyles as="div">
+      <Container isBig>
+        <Heading as="h2" looksLike="h3" textColor="blue.default">
+          Have something to discuss with me or just want to say Hello?
+        </Heading>
+        <Button>Start a conversation</Button>
+      </Container>
+    </ContactCalloutStyles>
   </Layout>
 );
 
