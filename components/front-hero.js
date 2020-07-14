@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import { themeGet } from '@styled-system/theme-get';
 import Link from 'next/link';
-
 import { untilDesktop, desktop, tablet, mobilePlus, large } from '../lib/breakpoints';
 import SocialLinks from './social-links';
 import Button from './button';
+import Heading from './primitives/heading';
 
 const Hero = styled.section`
   background: url('/images/hero-bg.jpg') no-repeat top center / cover;
@@ -141,9 +141,9 @@ const FrontHero = () => (
         <img src="/images/avatar.jpg" srcSet="/images/avatar@2x.jpg 2x" alt="Luis Contreras" />
       </div>
       <div className="hero-intro">
-        <h1>
+        <Heading as="h1">
           Hi, <span>I'm Luis</span>
-        </h1>
+        </Heading>
         <p>
           Detail-oriented and passionate Software Engineer based in Stockholm, Sweden. Highly
           experienced in Javascript and React.
