@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { themeGet } from '@styled-system/theme-get';
 import { rem } from 'polished';
 import { untilTablet, tablet } from '../lib/breakpoints';
+import Heading from './primitives/heading';
 
 const CardStyles = styled.div`
   border-radius: 16px;
@@ -13,7 +14,6 @@ const CardStyles = styled.div`
   }
 
   h2 {
-    color: ${themeGet('colors.primary')};
     margin-top: 0;
     display: flex;
     align-items: center;
@@ -36,14 +36,14 @@ const CardStyles = styled.div`
 
 const Card = ({ heading, children, icon: Icon }) => (
   <CardStyles>
-    <h2>
+    <Heading as="h2" textColor="primary">
       {Icon && (
         <span>
           <Icon />
         </span>
       )}
       {heading}
-    </h2>
+    </Heading>
     <div className="card-content">{children}</div>
   </CardStyles>
 );
