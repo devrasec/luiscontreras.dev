@@ -63,4 +63,6 @@ export default {
   shadows: {
     subtle: '2px 2px 15px rgba(0, 0, 0, 0.07)',
   },
+
+  gap: space.md,
 };
