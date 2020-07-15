@@ -16,7 +16,6 @@ const PostTeaser = styled(BasePostTeaser)``;
 
 const Section = styled.section`
   margin: ${themeGet('space.xl')} 0;
-  padding: 0 ${themeGet('space.default')};
   ${desktop} {
     margin: ${themeGet('space.xxl')} 0;
   }

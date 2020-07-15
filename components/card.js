@@ -7,7 +7,7 @@ import Heading from './primitives/heading';
 const CardStyles = styled.div`
   border-radius: 16px;
   box-shadow: ${themeGet('shadows.subtle')};
-  padding: ${themeGet('space.default')};
+  padding: ${themeGet('gap')};
   width: 100%;
   ${tablet} {
     padding: ${themeGet('space.lg')} ${rem(120)};

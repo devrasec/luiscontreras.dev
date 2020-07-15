@@ -30,7 +30,7 @@ const HeroContent = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   ${untilDesktop} {
-    padding: 0 ${themeGet('space.default')};
+    padding: 0 ${themeGet('gap')};
   }
 
   h1 {
