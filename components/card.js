@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { themeGet } from '@styled-system/theme-get';
 import { rem } from 'polished';
-import { untilTablet, tablet } from '../lib/breakpoints';
+import { tablet } from '../lib/breakpoints';
 import Heading from './primitives/heading';
 
 const CardStyles = styled.div`
@@ -18,12 +18,9 @@ const CardStyles = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    ${untilTablet} {
-      font-size: ${themeGet('fontSizes.3')};
-    }
 
     > span {
-      margin-right: ${themeGet('space.sm')};
+      margin-right: ${themeGet('space.xxs')};
       color: ${themeGet('colors.secondary')};
       font-size: 0.7em;
     }
