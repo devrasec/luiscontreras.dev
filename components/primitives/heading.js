@@ -1,27 +1,59 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { themeGet } from '@styled-system/theme-get';
+import { responsiveFontBreakpoint, large } from '../../lib/breakpoints';
+
+const headingSizes = {
+  h1: {
+    viewUnit: '6vw',
+    maxFontSize: 'fontSizes.6',
+  },
+  h2: {
+    viewUnit: '3.7vw',
+    maxFontSize: 'fontSizes.5',
+  },
+  h3: {
+    viewUnit: '2.3vw',
+    maxFontSize: 'fontSizes.4',
+  },
+  h4: {
+    viewUnit: '1.25vw',
+    maxFontSize: 'fontSizes.3',
+  },
+  h5: {
+    viewUnit: '.52vw',
+    maxFontSize: 'fontSizes.2',
+  },
+};
+
+const getHeadingStyles = heading => css`
+  ${responsiveFontBreakpoint} {
+    font-size: calc(1rem + ${headingSizes[heading].viewUnit});
+  }
+
+  ${large} {
+    font-size: ${themeGet(headingSizes[heading].maxFontSize)};
+  }
+`;
 
 const getFontSize = props => {
   const { looksLike, as } = props;
   const styleAs = looksLike || as;
 
+  // TODO: Check efficiency of this.
   switch (styleAs) {
     case 'h2':
-      return `font-size: ${themeGet('fontSizes.5')(props)}`;
     case 'h3':
-      return `font-size: ${themeGet('fontSizes.4')(props)}`;
     case 'h4':
-      return `font-size: ${themeGet('fontSizes.3')(props)}`;
     case 'h5':
-      return `font-size: ${themeGet('fontSizes.2')(props)}`;
+      return getHeadingStyles(styleAs);
     default:
-      return `font-size: ${themeGet('fontSizes.6')(props)}`;
+      return getHeadingStyles('h1');
   }
 };
 
 const Heading = styled.h1`
   ${getFontSize};
-  margin: 2.75rem 0 1.05rem;
+  margin: 2.5rem 0 1.05rem;
   font-family: ${themeGet('fonts.heading')};
   font-weight: ${themeGet('fontWeights.heading')};
   line-height: ${themeGet('lineHeights.heading')};

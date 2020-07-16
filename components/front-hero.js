@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { themeGet } from '@styled-system/theme-get';
 import Link from 'next/link';
-import { untilDesktop, desktop, tablet, mobilePlus, large } from '../lib/breakpoints';
+import { untilDesktop, tablet, mobilePlus, large } from '../lib/breakpoints';
 import SocialLinks from './social-links';
 import Button from './button';
 import Heading from './primitives/heading';
@@ -34,14 +34,6 @@ const HeroContent = styled.div`
   }
 
   h1 {
-    font-size: ${themeGet('fontSizes.4')};
-    ${mobilePlus} {
-      font-size: ${themeGet('fontSizes.5')};
-    }
-    ${desktop} {
-      font-size: ${themeGet('fontSizes.big')};
-    }
-
     span {
       color: ${themeGet('colors.secondary')};
     }
