@@ -20,7 +20,7 @@ const CardStyles = styled.div`
     justify-content: center;
 
     > span {
-      margin-right: ${themeGet('space.sm')};
+      margin-right: ${themeGet('space.xxs')};
       color: ${themeGet('colors.secondary')};
       font-size: 0.7em;
     }
