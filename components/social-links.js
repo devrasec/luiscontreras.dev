@@ -20,19 +20,19 @@ const SocialLinksStyles = styled.div`
   padding-top: ${themeGet('space.md')};
 
   a {
-    color: ${themeGet('colors.primary')};
+    color: ${props => themeGet(`colors.${props.iconColor}`)(props)};
     transition: color 200ms ease-in-out;
     display: block;
     margin: 0 ${themeGet('space.xs')};
 
     &:hover {
-      color: ${themeGet('colors.white')};
+      color: ${props => themeGet(`colors.${props.iconHoverColor}`)(props)};
     }
   }
 `;
 
-const SocialLinks = ({ className }) => (
-  <SocialLinksStyles className={className}>
+const SocialLinks = ({ className, iconColor = 'primary', iconHoverColor = 'secondary' }) => (
+  <SocialLinksStyles className={className} iconColor={iconColor} iconHoverColor={iconHoverColor}>
     <IconContext.Provider value={{ size: '2rem' }}>
       <a href={socialLinks.twitter} {...commonLinkProps}>
         <FaTwitter />
