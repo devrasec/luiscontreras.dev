@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import { themeGet } from '@styled-system/theme-get';
+import { FaLaptopCode, FaHeart, FaMugHot } from 'react-icons/fa';
+import { rem } from 'polished';
 import Heading from './primitives/heading';
 import SocialLinks from './social-links';
 
@@ -20,6 +22,20 @@ const FooterStyles = styled.footer`
   }
 `;
 
+const Copyright = styled.p`
+  max-width: 260px;
+  margin: ${themeGet('space.xxl')} auto 0;
+  display: grid;
+  align-items: center;
+  grid-gap: ${themeGet('space.sm')};
+  column-gap: ${themeGet('space.sm')};
+  grid-template-columns: minmax(${rem(165)}, 1fr) repeat(3, 1fr);
+
+  svg {
+    justify-self: center;
+  }
+`;
+
 const Footer = () => (
   <FooterStyles>
     <div className="footer-content">
@@ -29,7 +45,12 @@ const Footer = () => (
 
       <SocialLinks iconColor="white" />
 
-      <p>Website made by me &copy; 2020</p>
+      <Copyright>
+        <span>Luis Contreras &copy; 2020</span>
+        <FaLaptopCode title="Code" />
+        <FaMugHot title="Coffee" />
+        <FaHeart title="Love" />
+      </Copyright>
     </div>
   </FooterStyles>
 );

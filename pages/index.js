@@ -53,7 +53,7 @@ const ContactCalloutStyles = styled(Section)`
   padding: ${themeGet('space.xl')} 0;
   margin-bottom: 0;
   ${desktop} {
-    padding: ${themeGet('space.xxl')} 0;
+    padding: 160px 0;
     margin-bottom: 0;
   }
 
