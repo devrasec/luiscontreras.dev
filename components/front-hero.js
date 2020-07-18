@@ -116,14 +116,6 @@ const SocialLinksStyled = styled(SocialLinks)`
   ${tablet} {
     justify-content: flex-start;
   }
-
-  a {
-    color: ${themeGet('colors.white')};
-
-    &:hover {
-      color: ${themeGet('colors.secondary')};
-    }
-  }
 `;
 
 const FrontHero = () => (
@@ -141,7 +133,7 @@ const FrontHero = () => (
           experienced in Javascript and React.
         </p>
 
-        <SocialLinksStyled />
+        <SocialLinksStyled iconColor="white" />
 
         <div className="hero-foot">
           <Button variant="secondary">Say Hello</Button>

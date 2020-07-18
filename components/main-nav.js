@@ -163,7 +163,7 @@ const MainNav = () => {
             </ul>
           </nav>
 
-          <SocialLinks />
+          <SocialLinks iconHoverColor="white" />
         </MenuOverlay>
       )}
     </>
