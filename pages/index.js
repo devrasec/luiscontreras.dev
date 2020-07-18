@@ -109,49 +109,51 @@ const talks = [
 
 const HomePage = () => (
   <Layout>
-    <FrontHero />
-    <Container isBig>
-      <Section>
-        <Card heading="Writing" icon={FaFeather}>
-          <TeaserListStyles>
-            {posts.map(post => (
-              <PostTeaser key={post._id} post={post} />
-            ))}
-            <div className="card-footer">
-              <Button>All Posts</Button>
-            </div>
-          </TeaserListStyles>
-        </Card>
-      </Section>
-
-      <Section>
-        <Card heading="Talks" icon={FaMicrophoneAlt}>
-          {talks.map(({ _id, title, intro, date, eventLink, place, talkLink }) => (
-            <TalkStyles key={_id}>
-              <TeaserHeading>{title}</TeaserHeading>
-              <PostDate>{date}</PostDate>
-              <p>{intro}</p>
-              <div>
-                <strong>Event website:</strong>{' '}
-                <a href={eventLink.url} target="_blank" rel="noreferrer noopener">
-                  {eventLink.name}
-                </a>
+    <main role="main">
+      <FrontHero />
+      <Container isBig>
+        <Section>
+          <Card heading="Writing" icon={FaFeather}>
+            <TeaserListStyles>
+              {posts.map(post => (
+                <PostTeaser key={post._id} post={post} />
+              ))}
+              <div className="card-footer">
+                <Button>All Posts</Button>
               </div>
-              {talkLink && (
+            </TeaserListStyles>
+          </Card>
+        </Section>
+
+        <Section>
+          <Card heading="Talks" icon={FaMicrophoneAlt}>
+            {talks.map(({ _id, title, intro, date, eventLink, place, talkLink }) => (
+              <TalkStyles key={_id}>
+                <TeaserHeading>{title}</TeaserHeading>
+                <PostDate>{date}</PostDate>
+                <p>{intro}</p>
                 <div>
-                  <a href={talkLink} target="_blank" rel="noreferrer noopener">
-                    Watch the recorded talk
+                  <strong>Event website:</strong>{' '}
+                  <a href={eventLink.url} target="_blank" rel="noreferrer noopener">
+                    {eventLink.name}
                   </a>
                 </div>
-              )}
-              <div className="place">
-                <FaMapMarkerAlt /> {place}
-              </div>
-            </TalkStyles>
-          ))}
-        </Card>
-      </Section>
-    </Container>
+                {talkLink && (
+                  <div>
+                    <a href={talkLink} target="_blank" rel="noreferrer noopener">
+                      Watch the recorded talk
+                    </a>
+                  </div>
+                )}
+                <div className="place">
+                  <FaMapMarkerAlt /> {place}
+                </div>
+              </TalkStyles>
+            ))}
+          </Card>
+        </Section>
+      </Container>
+    </main>
 
     <ContactCalloutStyles as="div">
       <Container isBig>
