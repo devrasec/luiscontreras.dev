@@ -125,7 +125,7 @@ const FrontHero = () => (
         <img src="/images/avatar.jpg" srcSet="/images/avatar@2x.jpg 2x" alt="Luis Contreras" />
       </div>
       <div className="hero-intro">
-        <Heading as="h1" textColor="white">
+        <Heading textColor="white" isBig>
           Hi, <span>I'm Luis</span>
         </Heading>
         <p>

@@ -23,11 +23,13 @@ export const fonts = {
   heading: '"Montserrat", -apple-system, BlinkMacSystemFont, sans-serif',
 };
 
-export const fontSizes = [0.75, 1, 1.333, 1.777, 2.369, 3.157, 4.209].map(value => `${value}rem`);
+export const fontSizes = [0.75, 1, 1.333, 1.777, 2.369, 3.157, 4.209, 5.61].map(
+  value => `${value}rem`
+);
 
 fontSizes.sm = fontSizes[0];
 fontSizes.body = fontSizes[1];
-fontSizes.big = fontSizes[6];
+fontSizes.big = fontSizes[7];
 
 // Fibonacci scale :)
 export const space = {
