@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { themeGet } from '@styled-system/theme-get';
 
 import MainNav from './main-nav';
-import { tablet } from '../lib/breakpoints';
+import { tablet, untilMobilePlus } from '../lib/breakpoints';
 
 const HeaderStyles = styled.header`
   align-items: center;
@@ -23,6 +23,13 @@ const BrandName = styled.div`
   margin-left: ${themeGet('space.sm')};
   font-weight: ${themeGet('fontWeights.bold')};
   color: ${themeGet('colors.blue.dark')};
+  font-size: ${themeGet('fontSizes.2')};
+  text-transform: uppercase;
+  font-family: ${themeGet('fonts.heading')};
+  line-height: 1;
+  ${untilMobilePlus} {
+    display: none;
+  }
 `;
 
 const Header = () => (

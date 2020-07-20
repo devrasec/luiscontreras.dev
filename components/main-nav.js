@@ -67,7 +67,7 @@ const MenuOverlay = styled.div`
       padding: 0;
       margin: 0;
       text-align: center;
-      font-size: ${themeGet('fontSizes.3')};
+      font-size: ${themeGet('fontSizes.4')};
       font-family: ${themeGet('fonts.heading')};
       font-weight: ${themeGet('fontWeights.bold')};
 
