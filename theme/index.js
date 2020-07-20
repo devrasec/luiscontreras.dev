@@ -23,7 +23,7 @@ export const fonts = {
   heading: '"Montserrat", -apple-system, BlinkMacSystemFont, sans-serif',
 };
 
-export const fontSizes = [0.707, 1, 1.414, 1.999, 2.827, 3.998, 5.653].map(value => `${value}rem`);
+export const fontSizes = [0.75, 1, 1.333, 1.777, 2.369, 3.157, 4.209].map(value => `${value}rem`);
 
 fontSizes.sm = fontSizes[0];
 fontSizes.body = fontSizes[1];

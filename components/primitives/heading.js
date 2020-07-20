@@ -4,23 +4,23 @@ import { responsiveFontBreakpoint, large } from '../../lib/breakpoints';
 
 const headingSizes = {
   h1: {
-    viewUnit: '6vw',
+    viewUnit: '4.0175vw',
     maxFontSize: 'fontSizes.6',
   },
   h2: {
-    viewUnit: '3.7vw',
+    viewUnit: '2.7014vw',
     maxFontSize: 'fontSizes.5',
   },
   h3: {
-    viewUnit: '2.3vw',
+    viewUnit: '1.715vw',
     maxFontSize: 'fontSizes.4',
   },
   h4: {
-    viewUnit: '1.25vw',
+    viewUnit: '.9744vw',
     maxFontSize: 'fontSizes.3',
   },
   h5: {
-    viewUnit: '.52vw',
+    viewUnit: '.418vw',
     maxFontSize: 'fontSizes.2',
   },
 };
