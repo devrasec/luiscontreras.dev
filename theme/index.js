@@ -41,6 +41,8 @@ export const space = {
   xxl: '5.25rem',
 };
 
+const gap = space.md;
+
 export default {
   colors,
   fonts,
@@ -64,5 +66,7 @@ export default {
     subtle: '2px 2px 15px rgba(0, 0, 0, 0.07)',
   },
 
-  gap: space.md,
+  gap,
+  maxWidth: `calc(720px + (${gap} * 2))`,
+  maxWidthBig: `calc(920px + (${gap} * 2))`,
 };

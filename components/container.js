@@ -3,7 +3,7 @@ import { themeGet } from '@styled-system/theme-get';
 
 const Container = styled.div`
   width: 100%;
-  max-width: ${props => (props.isBig ? '960px' : '720px')};
+  max-width: ${({ isBig, theme }) => (isBig ? theme.maxWidthBig : theme.maxWidth)};
   margin: 0 auto;
   padding-left: ${themeGet('gap')};
   padding-right: ${themeGet('gap')};
