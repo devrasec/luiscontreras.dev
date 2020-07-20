@@ -3,24 +3,28 @@ import { themeGet } from '@styled-system/theme-get';
 import { responsiveFontBreakpoint, large } from '../../lib/breakpoints';
 
 const headingSizes = {
+  big: {
+    viewUnit: '5.7674vw',
+    maxFontSize: 'fontSizes.7',
+  },
   h1: {
-    viewUnit: '6vw',
+    viewUnit: '4.0175vw',
     maxFontSize: 'fontSizes.6',
   },
   h2: {
-    viewUnit: '3.7vw',
+    viewUnit: '2.7014vw',
     maxFontSize: 'fontSizes.5',
   },
   h3: {
-    viewUnit: '2.3vw',
+    viewUnit: '1.715vw',
     maxFontSize: 'fontSizes.4',
   },
   h4: {
-    viewUnit: '1.25vw',
+    viewUnit: '.9744vw',
     maxFontSize: 'fontSizes.3',
   },
   h5: {
-    viewUnit: '.52vw',
+    viewUnit: '.418vw',
     maxFontSize: 'fontSizes.2',
   },
 };
@@ -36,7 +40,12 @@ const getHeadingStyles = heading => css`
 `;
 
 const getFontSize = props => {
-  const { looksLike, as } = props;
+  const { looksLike, as, isBig } = props;
+
+  if (isBig) {
+    return getHeadingStyles('big');
+  }
+
   const styleAs = looksLike || as;
 
   // TODO: Check efficiency of this.

@@ -5,7 +5,13 @@ import Container from '../components/container';
 
 const AboutPage = () => (
   <Layout>
-    <Container as="main" role="main">
+    <Container
+      as="main"
+      role="main"
+      css={`
+        margin-bottom: 160px;
+      `}
+    >
       <Heading textColor="primary">About</Heading>
 
       <Heading as="h2" textColor="secondary">
