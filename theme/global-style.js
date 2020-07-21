@@ -36,9 +36,8 @@ const GlobalStyle = createGlobalStyle`
   a {
     color: ${themeGet('colors.blue.default')};
     text-decoration: underline;
-    text-decoration-color: ${themeGet('colors.primary')};
     &:hover {
-      color: ${themeGet('colors.secondary')};
+      color: ${themeGet('colors.blue.dark')};
     }
   }
 
