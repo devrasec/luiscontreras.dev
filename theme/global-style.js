@@ -21,6 +21,11 @@ const GlobalStyle = createGlobalStyle`
     color: ${themeGet('colors.primary')};
   }
 
+  html,
+  body {
+    height: 100%;
+  }
+
   html {
     font-size: 100%;
   }
@@ -31,6 +36,10 @@ const GlobalStyle = createGlobalStyle`
     font-weight: ${themeGet('fontWeights.body')};
     line-height: ${themeGet('lineHeights.body')};
     color: ${themeGet('textColor')};
+
+    &.menu-open {
+      overflow: hidden;
+    }
   }
 
   a {
