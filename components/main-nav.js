@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styled, { css } from 'styled-components';
 import { themeGet } from '@styled-system/theme-get';
 import Link from 'next/link';
@@ -56,6 +56,7 @@ const MenuOverlay = styled.div`
   top: 60px;
   background: ${themeGet('colors.secondary')};
   padding-top: ${themeGet('space.xl')};
+  overflow: auto;
   ${tablet} {
     height: calc(100vh - 80px);
     top: 80px;
@@ -112,6 +113,14 @@ const ToggleButton = styled.button`
 const MainNav = () => {
   const [isToggleOn, setToggle] = useState(false);
   const toggleMenu = () => setToggle(!isToggleOn);
+
+  useEffect(() => {
+    if (isToggleOn) {
+      document.body.classList.add('menu-open');
+    } else {
+      document.body.classList.remove('menu-open');
+    }
+  });
 
   return (
     <>
