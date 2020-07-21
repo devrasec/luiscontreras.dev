@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import { FaGithub, FaTwitter, FaLinkedin } from 'react-icons/fa';
+import { FaGithub, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import { IconContext } from 'react-icons';
 import styled from 'styled-components';
 import { themeGet } from '@styled-system/theme-get';
@@ -44,6 +44,10 @@ const SocialLinks = ({ className, iconColor = 'primary', iconHoverColor = 'secon
 
       <a href={socialLinks.linkedin} {...commonLinkProps}>
         <FaLinkedin />
+      </a>
+
+      <a href={socialLinks.instagram} {...commonLinkProps}>
+        <FaInstagram />
       </a>
     </IconContext.Provider>
   </SocialLinksStyles>
