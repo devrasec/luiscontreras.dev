@@ -11,6 +11,7 @@ const buttonStyles = css`
 
 const primaryStyles = css`
   background: ${themeGet('colors.primary')};
+  color: ${themeGet('colors.white')};
 
   &:hover,
   &:focus {
@@ -25,6 +26,7 @@ const primaryStyles = css`
 
 const secondaryStyles = css`
   background: ${themeGet('colors.secondary')};
+  color: ${themeGet('colors.white')};
 
   &:hover,
   &:focus {
@@ -33,7 +35,7 @@ const secondaryStyles = css`
   }
 
   &:active {
-    background: ${props => setLightness(0.53, themeGet('colors.secondary')(props))};
+    background: ${props => setLightness(0.57, themeGet('colors.secondary')(props))};
   }
 `;
 
@@ -42,7 +44,6 @@ const Button = styled.button.attrs(({ as, variant }) => ({
   as: as === 'a' || as === 'button' ? as : 'button',
 }))`
   ${({ as }) => as === 'button' && buttonStyles};
-  color: ${themeGet('colors.white')};
   display: inline-block;
   font-family: ${themeGet('fonts.heading')};
   font-weight: ${themeGet('fontWeights.bold')};

@@ -1,18 +1,18 @@
 /* eslint-disable prefer-destructuring */
 export const colors = {
   blue: {
-    default: '#3A89C9',
-    dark: '#1B325F',
-    light: '#9CC4E4',
+    default: '#3a89c9',
+    dark: '#1b325f',
+    light: '#9cc4e4',
   },
   gray: {
-    light: '#F2F2F2',
-    medium: '#C4C4C4',
+    light: '#f2f2f2',
+    medium: '#c4c4c4',
   },
   black: '#000000',
-  white: '#FFFFFF',
-  orange: '#F26C4F',
-  red: '#FF2047',
+  white: '#ffffff',
+  orange: '#f26b4e',
+  red: '#ff2047',
 };
 
 colors.primary = colors.blue.dark;

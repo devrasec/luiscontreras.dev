@@ -54,7 +54,7 @@ const HeroContent = styled.div`
       display: block;
       height: 160px;
       width: 160px;
-      border: 3px solid ${themeGet('colors.primary')};
+      border: 3px solid ${themeGet('colors.secondary')};
       ${tablet} {
         height: 228px;
         width: 228px;
