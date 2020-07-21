@@ -83,13 +83,13 @@ const HeroContent = styled.div`
     justify-content: center;
     flex-flow: column wrap;
 
-    button {
+    ${Button} {
       margin-bottom: ${themeGet('space.default')};
     }
 
     ${mobilePlus} {
       flex-direction: row;
-      button {
+      ${Button} {
         margin-right: ${themeGet('space.default')};
         margin-bottom: 0;
       }
@@ -99,7 +99,7 @@ const HeroContent = styled.div`
       justify-content: flex-start;
     }
 
-    a {
+    .contact-link {
       color: ${themeGet('colors.white')};
       font-weight: ${themeGet('fontWeights.bold')};
       text-decoration: underline;
@@ -136,9 +136,13 @@ const FrontHero = () => (
         <SocialLinksStyled iconColor="white" />
 
         <div className="hero-foot">
-          <Button variant="secondary">Say Hello</Button>
+          <Link href="/contact" passHref>
+            <Button as="a" variant="secondary">
+              Say Hello
+            </Button>
+          </Link>
           <Link href="/about">
-            <a>Or click here to know more about me</a>
+            <a className="contact-link">Or click here to know more about me</a>
           </Link>
         </div>
       </div>

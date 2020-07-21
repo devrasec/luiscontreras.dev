@@ -14,7 +14,7 @@ const AboutPage = () => (
     >
       <Heading textColor="primary">About</Heading>
 
-      <Heading as="h2" textColor="secondary">
+      <Heading as="h2" looksLike="h4" textColor="secondary">
         software engineer, javascript lover, sporadic designer, sports addict, husband, and dad.
       </Heading>
 

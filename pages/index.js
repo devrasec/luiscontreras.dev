@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { themeGet } from '@styled-system/theme-get';
 import { FaFeather, FaMicrophoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
+import Link from 'next/link';
 import Layout from '../components/layout';
 import FrontHero from '../components/front-hero';
 import Container from '../components/container';
@@ -119,7 +120,9 @@ const HomePage = () => (
                 <PostTeaser key={post._id} post={post} />
               ))}
               <div className="card-footer">
-                <Button>All Posts</Button>
+                <Link href="/blog" passHref>
+                  <Button as="a">All Posts</Button>
+                </Link>
               </div>
             </TeaserListStyles>
           </Card>
@@ -160,7 +163,9 @@ const HomePage = () => (
         <Heading as="h2" looksLike="h3" textColor="blue.default">
           Have something to discuss with me or just want to say Hello?
         </Heading>
-        <Button>Start a conversation</Button>
+        <Link href="/contact" passHref>
+          <Button as="a">Start a conversation</Button>
+        </Link>
       </Container>
     </ContactCalloutStyles>
   </Layout>

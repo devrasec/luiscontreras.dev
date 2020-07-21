@@ -2,12 +2,20 @@ import styled, { css } from 'styled-components';
 import { themeGet } from '@styled-system/theme-get';
 import { setLightness } from 'polished';
 
+const buttonStyles = css`
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  border: none;
+`;
+
 const primaryStyles = css`
   background: ${themeGet('colors.primary')};
 
   &:hover,
   &:focus {
     background: ${props => setLightness(0.34, themeGet('colors.primary')(props))};
+    color: ${themeGet('colors.white')};
   }
 
   &:active {
@@ -21,6 +29,7 @@ const secondaryStyles = css`
   &:hover,
   &:focus {
     background: ${props => setLightness(0.73, themeGet('colors.secondary')(props))};
+    color: ${themeGet('colors.white')};
   }
 
   &:active {
@@ -28,12 +37,12 @@ const secondaryStyles = css`
   }
 `;
 
-const ButtonStyles = styled.button`
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  border: none;
+const Button = styled.button.attrs(({ as, variant }) => ({
+  variant: variant || 'primary',
+  as: as === 'a' || as === 'button' ? as : 'button',
+}))`
+  ${({ as }) => as === 'button' && buttonStyles};
   color: ${themeGet('colors.white')};
-  cursor: pointer;
   display: inline-block;
   font-family: ${themeGet('fonts.heading')};
   font-weight: ${themeGet('fontWeights.bold')};
@@ -60,11 +69,5 @@ const ButtonStyles = styled.button`
     }
   }}
 `;
-
-const Button = ({ children, className, variant = 'primary' }) => (
-  <ButtonStyles className={className} variant={variant}>
-    {children}
-  </ButtonStyles>
-);
 
 export default Button;
