@@ -16,8 +16,12 @@
   },
   "dependencies": {
     "@styled-system/theme-get": "^5.1.2",
+    "gray-matter": "^4.0.2",
+    "lodash": "^4.17.19",
     "next": "^9.4.4",
+    "next-mdx-remote": "^0.6.0",
     "polished": "^3.6.4",
+    "raw-loader": "^4.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-icons": "^3.10.0",
