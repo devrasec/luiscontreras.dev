@@ -68,14 +68,14 @@ const posts = [
   {
     _id: 'adfqqaduafdfauqeh',
     title: 'When should you be using Web Workers?',
-    intro:
+    summary:
       'Keeping the frame rate stable is vital for virtual reality applications. Off-main-thread architecture can help ensure that the frames keep shipping.',
     date: 'May 8, 2020',
   },
   {
     _id: 'adfqqaduaqequfiqn',
     title: 'How to Build a Consistent Content Creation Habit',
-    intro:
+    summary:
       'If your goal is to be more consistent with content, your instinct may be to make a plan. But trying to plan your way to a creative habit is a mistake.',
     date: 'May 8, 2020',
   },
@@ -85,7 +85,7 @@ const talks = [
   {
     _id: 'qeruifaiqeifyq',
     title: 'Better State handling in React Applications using XState',
-    intro: 'How to use State Machines for handling state in your React components',
+    summary: 'How to use State Machines for handling state in your React components',
     date: 'Nov 23, 2019',
     eventLink: {
       name: 'Barcamp',
@@ -97,7 +97,7 @@ const talks = [
   {
     _id: 'urruifqiqeiadf',
     title: 'Modern Web Application Development with React',
-    intro:
+    summary:
       'A React workshop for beginners, the workshop took place at Local Hack Day Santo Domingo, an event organized by Major League Hacking.',
     date: 'Dec 1, 2018',
     eventLink: {
@@ -130,11 +130,11 @@ const HomePage = () => (
 
         <Section>
           <Card heading="Talks" icon={FaMicrophoneAlt}>
-            {talks.map(({ _id, title, intro, date, eventLink, place, talkLink }) => (
+            {talks.map(({ _id, title, summary, date, eventLink, place, talkLink }) => (
               <TalkStyles key={_id}>
                 <TeaserHeading>{title}</TeaserHeading>
                 <PostDate>{date}</PostDate>
-                <p>{intro}</p>
+                <p>{summary}</p>
                 <div>
                   <strong>Event website:</strong>{' '}
                   <a href={eventLink.url} target="_blank" rel="noreferrer noopener">
