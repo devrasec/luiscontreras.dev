@@ -12,7 +12,7 @@ export default function BlogPage({ allPostsData }) {
 
         <div>
           {allPostsData.map(post => (
-            <PostTeaser post={post} key={post.id} />
+            <PostTeaser post={post} key={post.id} showReadmore />
           ))}
         </div>
       </Container>
