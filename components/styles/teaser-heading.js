@@ -1,7 +1,15 @@
+import styled from 'styled-components';
 import Heading from '../primitives/heading';
 
+const HeadingStyles = styled(Heading)`
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+`;
+
 const TeaserHeading = ({ className, children }) => (
-  <Heading
+  <HeadingStyles
     css={`
       margin-top: 0;
     `}
@@ -11,7 +19,7 @@ const TeaserHeading = ({ className, children }) => (
     className={className}
   >
     {children}
-  </Heading>
+  </HeadingStyles>
 );
 
 export default TeaserHeading;
