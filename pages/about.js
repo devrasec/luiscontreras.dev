@@ -3,13 +3,7 @@ import Heading from '../components/primitives/heading';
 import Container from '../components/container';
 
 const AboutPage = () => (
-  <Container
-    as="main"
-    role="main"
-    css={`
-      margin-bottom: 160px;
-    `}
-  >
+  <Container as="main" role="main">
     <Heading textColor="primary">About</Heading>
 
     <Heading as="h2" looksLike="h4" textColor="secondary">
