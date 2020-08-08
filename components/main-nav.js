@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import styled, { css } from 'styled-components';
 import { themeGet } from '@styled-system/theme-get';
 import Link from 'next/link';
-
+import { useRouter } from 'next/router';
 import SocialLinks from './social-links';
 import { tablet } from '../lib/breakpoints';
 
@@ -112,6 +112,7 @@ const ToggleButton = styled.button`
 
 const MainNav = () => {
   const [isToggleOn, setToggle] = useState(false);
+  const router = useRouter();
   const toggleMenu = () => setToggle(!isToggleOn);
 
   useEffect(() => {
@@ -120,6 +121,14 @@ const MainNav = () => {
     } else {
       document.body.classList.remove('menu-open');
     }
+  });
+
+  useEffect(() => {
+    const hideMenu = () => setToggle(false);
+
+    router.events.on('routeChangeStart', hideMenu);
+
+    return () => router.events.off('routeChangeStart', hideMenu);
   });
 
   return (

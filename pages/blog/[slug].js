@@ -1,7 +1,6 @@
 import renderToString from 'next-mdx-remote/render-to-string';
 import hydrate from 'next-mdx-remote/hydrate';
 import omit from 'lodash/omit';
-import Layout from '../../components/layout';
 import { getAllPostSlugs, getPostBySlug } from '../../lib/posts';
 import Heading from '../../components/primitives/heading';
 import Container from '../../components/container';
@@ -12,21 +11,19 @@ export default function Post({ postData, mdxSource }) {
   const content = hydrate(mdxSource, mdxComponents);
 
   return (
-    <Layout>
-      <article>
-        <Container as="header" isBig>
-          <Heading
-            css={`
-              text-align: center;
-            `}
-          >
-            {title}
-          </Heading>
-        </Container>
+    <article>
+      <Container as="header" isBig>
+        <Heading
+          css={`
+            text-align: center;
+          `}
+        >
+          {title}
+        </Heading>
+      </Container>
 
-        <Container>{content}</Container>
-      </article>
-    </Layout>
+      <Container>{content}</Container>
+    </article>
   );
 }
 

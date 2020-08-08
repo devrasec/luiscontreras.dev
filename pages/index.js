@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { themeGet } from '@styled-system/theme-get';
 import { FaFeather, FaMicrophoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
 import Link from 'next/link';
-import Layout from '../components/layout';
 import FrontHero from '../components/front-hero';
 import Container from '../components/container';
 import { desktop } from '../lib/breakpoints';
@@ -109,7 +108,7 @@ const talks = [
 ];
 
 const HomePage = () => (
-  <Layout>
+  <>
     <main role="main">
       <FrontHero />
       <Container isBig>
@@ -168,7 +167,7 @@ const HomePage = () => (
         </Link>
       </Container>
     </ContactCalloutStyles>
-  </Layout>
+  </>
 );
 
 export default HomePage;

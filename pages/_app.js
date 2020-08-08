@@ -1,8 +1,8 @@
 import App from 'next/app';
 import { ThemeProvider } from 'styled-components';
-
 import theme from '../theme';
 import GlobalStyle from '../theme/global-style';
+import Layout from '../components/layout';
 
 export default class SiteApp extends App {
   render() {
@@ -11,8 +11,10 @@ export default class SiteApp extends App {
     return (
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-        <Component {...pageProps} />
+        <Layout>
+          {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+          <Component {...pageProps} />
+        </Layout>
       </ThemeProvider>
     );
   }
