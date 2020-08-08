@@ -63,6 +63,12 @@ const GlobalStyle = createGlobalStyle`
   strong {
     font-weight: ${themeGet('fontWeights.bold')};
   }
+
+  #__next {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 export default GlobalStyle;

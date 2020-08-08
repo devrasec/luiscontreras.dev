@@ -3,9 +3,15 @@ import Footer from './footer';
 
 const Layout = ({ children }) => (
   <>
-    <Header />
+    <div
+      css={`
+        flex: 1 0 auto;
+      `}
+    >
+      <Header />
 
-    {children}
+      {children}
+    </div>
 
     <Footer />
   </>

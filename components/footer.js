@@ -10,6 +10,7 @@ const FooterStyles = styled.footer`
   background-color: ${themeGet('colors.primary')};
   color: ${themeGet('colors.white')};
   padding: ${themeGet('space.xl')} ${themeGet('space.default')} ${themeGet('space.lg')};
+  flex-shrink: 0;
 
   .footer-content {
     text-align: center;
