@@ -33,7 +33,7 @@ const PostTeaserStyles = styled.article`
 `;
 
 const PostTeaser = ({ post, className, showReadmore }) => {
-  const { title, summary, date, id: slug, tags = [] } = post;
+  const { title, summary, date, slug, tags = [] } = post;
 
   return (
     <PostTeaserStyles className={className}>

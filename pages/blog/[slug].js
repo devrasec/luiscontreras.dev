@@ -40,7 +40,7 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const paths = getAllPostSlugs();
+  const paths = await getAllPostSlugs();
 
   return {
     paths,
