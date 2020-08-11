@@ -45,9 +45,6 @@ const GlobalStyle = createGlobalStyle`
   a {
     color: ${themeGet('colors.blue.default')};
     text-decoration: underline;
-    &:hover {
-      color: ${themeGet('colors.blue.dark')};
-    }
   }
 
   p {
@@ -62,6 +59,14 @@ const GlobalStyle = createGlobalStyle`
   b,
   strong {
     font-weight: ${themeGet('fontWeights.bold')};
+  }
+
+  img {
+    vertical-align: middle;
+  }
+
+  figure {
+    margin: 0;
   }
 
   #__next {
