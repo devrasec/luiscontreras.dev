@@ -12,7 +12,7 @@ module.exports = withPlugins(
   [
     optimizedImages,
     {
-      handleImages: ['jpeg', 'gif', 'svg'],
+      handleImages: ['jpeg'],
       optimizeImagesInDev: true,
     },
   ],
