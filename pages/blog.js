@@ -10,7 +10,7 @@ export default function BlogPage({ allPostsData }) {
 
       <div>
         {allPostsData.length ? (
-          allPostsData.map(post => <PostTeaser post={post} key={post.id} showReadmore />)
+          allPostsData.map(post => <PostTeaser post={post} key={post.id} />)
         ) : (
           <p>
             I haven't written any post yet.{' '}
