@@ -8,8 +8,7 @@ import styled from 'styled-components';
 import { getAllPostSlugs, getPostBySlug } from '../../lib/posts';
 import Heading from '../../components/primitives/heading';
 import Container from '../../components/container';
-import mdxComponents from '../../components/mdx-components';
-import Image from '../../components/primitives/image';
+import mdxComponents from '../../components/mdx';
 import Date from '../../components/date';
 
 const PubDate = styled(Date)``;
@@ -32,9 +31,9 @@ const BannerStyles = styled.figure`
 `;
 
 export default function Post({ postData, mdxSource }) {
-  const { title, imageCredit, image, date } = postData;
+  const { title, imageCredit, image, date, slug } = postData;
   const content = hydrate(mdxSource, mdxComponents);
-  const img = require(`../../content/posts/sample-post/${image}?resize&sizes[]=360&sizes[]=720&sizes[]=1440`);
+  const { ResponsiveImage } = mdxComponents;
 
   return (
     <article>
@@ -60,16 +59,7 @@ export default function Post({ postData, mdxSource }) {
         `}
       >
         <BannerStyles>
-          <picture>
-            <source srcSet={img.srcSet} sizes="(min-width: 860px) 720px, 85.19vw" />
-            <Image
-              sizes="(min-width: 860px) 720px, 85.19vw"
-              srcSet={img.srcSet}
-              src={img.src}
-              alt="Image for post"
-              isFluid
-            />
-          </picture>
+          <ResponsiveImage imageSrc={`${slug}/${image}`} />
           <figcaption>
             <Markdown>{imageCredit}</Markdown>
           </figcaption>
