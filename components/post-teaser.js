@@ -32,8 +32,8 @@ const PostTeaserStyles = styled.article`
   }
 `;
 
-const PostTeaser = ({ post, className, showReadmore }) => {
-  const { title, summary, date, id: slug, tags = [] } = post;
+const PostTeaser = ({ post, className }) => {
+  const { title, summary, date, slug, tags = [] } = post;
 
   return (
     <PostTeaserStyles className={className}>
@@ -53,12 +53,6 @@ const PostTeaser = ({ post, className, showReadmore }) => {
           <Tag tagName={tag} key={tag} />
         ))}
       </div>
-
-      {slug && showReadmore && (
-        <Link href="/blog/[slug]" as={`/blog/${slug}`}>
-          <a className="readmore-link">Read Post</a>
-        </Link>
-      )}
     </PostTeaserStyles>
   );
 };
