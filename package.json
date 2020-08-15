@@ -36,7 +36,7 @@
     "babel-plugin-styled-components": "^1.11.1",
     "eslint": "^7.2.0",
     "eslint-config-airbnb": "^18.2.0",
-    "eslint-config-contreras": "0.0.6",
+    "eslint-config-contreras": "0.0.7",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-html": "^6.0.3",
     "eslint-plugin-import": "^2.22.0",
