@@ -22,13 +22,14 @@
     "next": "^9.4.4",
     "next-compose-plugins": "^2.2.0",
     "next-mdx-remote": "^0.6.0",
-    "next-optimized-images": "^2.6.2",
+    "next-optimized-images": "^3.0.0-canary.10",
     "polished": "^3.6.5",
     "raw-loader": "^4.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-icons": "^3.10.0",
     "react-markdown": "^4.3.1",
+    "react-optimized-image": "^0.4.1",
     "styled-components": "^5.1.1"
   },
   "devDependencies": {
@@ -45,12 +46,8 @@
     "eslint-plugin-react": "^7.20.6",
     "eslint-plugin-react-hooks": "^4.0.8",
     "husky": "^4.2.5",
-    "image-trace-loader": "^1.0.2",
-    "imagemin-mozjpeg": "^9.0.0",
-    "jimp": "^0.16.0",
     "lint-staged": "^10.2.11",
-    "prettier": "^2.0.5",
-    "responsive-loader": "^2.0.2"
+    "prettier": "^2.0.5"
   },
   "husky": {
     "hooks": {
