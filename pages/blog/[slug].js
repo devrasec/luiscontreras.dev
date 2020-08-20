@@ -8,7 +8,7 @@ import styled from 'styled-components';
 import { getAllPostSlugs, getPostBySlug } from '../../lib/posts';
 import Heading from '../../components/primitives/heading';
 import Container from '../../components/container';
-import mdxComponents from '../../components/mdx';
+import components from '../../components/mdx';
 import Date from '../../components/date';
 
 const PubDate = styled(Date)``;
@@ -32,8 +32,8 @@ const BannerStyles = styled.figure`
 
 export default function Post({ postData, mdxSource }) {
   const { title, imageCredit, image, date, slug } = postData;
-  const content = hydrate(mdxSource, mdxComponents);
-  const { ResponsiveImage } = mdxComponents;
+  const content = hydrate(mdxSource, { components });
+  const { ResponsiveImage } = components;
 
   return (
     <article>
@@ -74,7 +74,10 @@ export default function Post({ postData, mdxSource }) {
 export async function getStaticProps({ params }) {
   const postData = await getPostBySlug(params.slug);
   const data = omit(postData, 'rawContent');
-  const mdxSource = await renderToString(postData.rawContent, mdxComponents, null, data);
+  const mdxSource = await renderToString(postData.rawContent, {
+    components,
+    scope: data,
+  });
 
   return {
     props: {
