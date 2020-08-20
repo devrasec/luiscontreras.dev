@@ -34,7 +34,7 @@
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "babel-plugin-styled-components": "^1.11.1",
-    "eslint": "^7.2.0",
+    "eslint": "^7.7.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-contreras": "0.0.7",
     "eslint-config-prettier": "^6.11.0",
