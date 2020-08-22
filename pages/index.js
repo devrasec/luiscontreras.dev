@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { themeGet } from '@styled-system/theme-get';
 import { FaFeather, FaMicrophoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
 import Link from 'next/link';
+import { NextSeo } from 'next-seo';
 import FrontHero from '../components/front-hero';
 import Container from '../components/container';
 import { desktop } from '../lib/breakpoints';
@@ -109,6 +110,7 @@ const talks = [
 
 const HomePage = () => (
   <>
+    <NextSeo title="Luis Contreras" titleTemplate="%s - Software Engineer" />
     <main role="main">
       <FrontHero />
       <Container isBig>
