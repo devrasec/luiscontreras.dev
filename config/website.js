@@ -1,4 +1,7 @@
 const websiteConfig = {
+  pageTitle: 'Luis Contreras',
+  pageDescription:
+    'Luis Contreras, Software Engineer in Stockholm. Sharing my knowledge of Web Development.',
   socialLinks: {
     twitter: 'https://twitter.com/devrasec/',
     github: 'https://github.com/devrasec/',
