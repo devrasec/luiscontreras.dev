@@ -2,11 +2,12 @@ import { NextSeo } from 'next-seo';
 import Container from '../components/container';
 import Heading from '../components/primitives/heading';
 import Link from '../components/primitives/link';
+import config from '../config/website';
 
 export default function ContactPage() {
   return (
     <>
-      <NextSeo title="Uses" />
+      <NextSeo title="Uses" canonical={`${config.siteUrl}/uses`} />
       <Container as="main" role="main">
         <Heading textColor="primary">Uses</Heading>
 

@@ -8,7 +8,7 @@ const { socialLinks } = websiteConfig;
 export default function ContactPage() {
   return (
     <>
-      <NextSeo title="Contact" />
+      <NextSeo title="Contact" canonical={`${websiteConfig.siteUrl}/contact`} />
       <Container as="main" role="main">
         <Heading textColor="primary">Contact</Heading>
 
@@ -30,7 +30,7 @@ export default function ContactPage() {
           </li>
 
           <li>
-            Send me an email to <a href="mailto:luis@luiscontreras.dev">luis@luiscontreras.dev</a>
+            Send me an email to <a href="mailto:hello@luiscontreras.dev">luis@luiscontreras.dev</a>
           </li>
         </ul>
       </Container>

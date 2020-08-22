@@ -1,11 +1,12 @@
 import Link from 'next/link';
 import { NextSeo } from 'next-seo';
+import config from '../config/website';
 import Heading from '../components/primitives/heading';
 import Container from '../components/container';
 
 const AboutPage = () => (
   <>
-    <NextSeo title="About" />
+    <NextSeo title="About" canonical={`${config.siteUrl}/about`} />
     <Container as="main" role="main">
       <Heading textColor="primary">About</Heading>
 

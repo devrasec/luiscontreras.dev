@@ -3,11 +3,12 @@ import { getAllPosts } from '../lib/posts';
 import Heading from '../components/primitives/heading';
 import Container from '../components/container';
 import PostTeaser from '../components/post-teaser';
+import config from '../config/website';
 
 export default function BlogPage({ allPostsData }) {
   return (
     <>
-      <NextSeo title="Blog" />
+      <NextSeo title="Blog" canonical={`${config.siteUrl}/blog`} />
       <Container>
         <Heading textColor="primary">Blog</Heading>
         <div>
