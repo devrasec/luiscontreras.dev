@@ -18,4 +18,10 @@ export default {
     handle: socialLinks.twitter,
     cardType: 'summary',
   },
+  additionalMetaTags: [
+    {
+      name: 'keywords',
+      content: 'Software Engineer, Web Development, Javascript, CSS, HTML, React',
+    },
+  ],
 };

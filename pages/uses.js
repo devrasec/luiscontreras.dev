@@ -4,10 +4,17 @@ import Heading from '../components/primitives/heading';
 import Link from '../components/primitives/link';
 import config from '../config/website';
 
+const pageDescription = 'The software and hardware Luis Contreras uses to do his work.';
+
 export default function ContactPage() {
   return (
     <>
-      <NextSeo title="Uses" canonical={`${config.siteUrl}/uses`} />
+      <NextSeo
+        title="Uses"
+        canonical={`${config.siteUrl}/uses`}
+        description={pageDescription}
+        openGraph={{ description: pageDescription }}
+      />
       <Container as="main" role="main">
         <Heading textColor="primary">Uses</Heading>
 

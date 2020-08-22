@@ -4,9 +4,18 @@ import config from '../config/website';
 import Heading from '../components/primitives/heading';
 import Container from '../components/container';
 
+const pageDescription = 'Get to know everything about Luis Contreras.';
+
 const AboutPage = () => (
   <>
-    <NextSeo title="About" canonical={`${config.siteUrl}/about`} />
+    <NextSeo
+      title="About"
+      canonical={`${config.siteUrl}/about`}
+      description={pageDescription}
+      openGraph={{
+        description: pageDescription,
+      }}
+    />
     <Container as="main" role="main">
       <Heading textColor="primary">About</Heading>
 

@@ -5,10 +5,20 @@ import Container from '../components/container';
 import PostTeaser from '../components/post-teaser';
 import config from '../config/website';
 
+const pageDescription =
+  'Read the Luis Contreras Blog to learn about Web Development. I write mostly about Javascript, CSS and React.';
+
 export default function BlogPage({ allPostsData }) {
   return (
     <>
-      <NextSeo title="Blog" canonical={`${config.siteUrl}/blog`} />
+      <NextSeo
+        title="Blog"
+        canonical={`${config.siteUrl}/blog`}
+        description={pageDescription}
+        openGraph={{
+          description: pageDescription,
+        }}
+      />
       <Container>
         <Heading textColor="primary">Blog</Heading>
         <div>

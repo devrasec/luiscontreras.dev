@@ -5,10 +5,17 @@ import websiteConfig from '../config/website';
 
 const { socialLinks } = websiteConfig;
 
+const pageDescription = 'Contact Luis Contreras by Twitter, Instagram or by sending him an email.';
+
 export default function ContactPage() {
   return (
     <>
-      <NextSeo title="Contact" canonical={`${websiteConfig.siteUrl}/contact`} />
+      <NextSeo
+        title="Contact"
+        canonical={`${websiteConfig.siteUrl}/contact`}
+        description={pageDescription}
+        openGraph={{ description: pageDescription }}
+      />
       <Container as="main" role="main">
         <Heading textColor="primary">Contact</Heading>
 
