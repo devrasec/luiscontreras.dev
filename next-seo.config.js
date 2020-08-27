@@ -13,6 +13,8 @@ export default {
     title: 'Luis Contreras - Software Engineer',
     description,
     url: siteUrl,
+    site_name: 'Luis Contreras',
+    type: 'website',
   },
   twitter: {
     handle: socialLinks.twitter,
