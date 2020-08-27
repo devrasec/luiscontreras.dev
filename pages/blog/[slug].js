@@ -3,6 +3,7 @@ import renderToString from 'next-mdx-remote/render-to-string';
 import hydrate from 'next-mdx-remote/hydrate';
 import omit from 'lodash/omit';
 import Markdown from 'react-markdown';
+import { NextSeo } from 'next-seo';
 import { themeGet } from '@styled-system/theme-get';
 import styled from 'styled-components';
 import { getAllPostSlugs, getPostBySlug } from '../../lib/posts';
@@ -10,6 +11,7 @@ import Heading from '../../components/primitives/heading';
 import Container from '../../components/container';
 import components from '../../components/mdx';
 import Date from '../../components/date';
+import config from '../../config/website';
 
 const PubDate = styled(Date)``;
 
@@ -31,43 +33,59 @@ const BannerStyles = styled.figure`
 `;
 
 export default function Post({ postData, mdxSource }) {
-  const { title, imageCredit, image, date, slug } = postData;
+  const { title, imageCredit, image, date, slug, seoTitle, seoKeywords, summary, tags } = postData;
   const content = hydrate(mdxSource, { components });
   const { ResponsiveImage } = components;
 
   return (
-    <article>
-      <Container as="header" isBig>
-        <Heading
-          textColor="primary"
-          looksLike="h2"
+    <>
+      <NextSeo
+        title={seoTitle}
+        description={summary}
+        additionalMetaTags={[{ name: 'keywords', content: seoKeywords.join(', ') }]}
+        canonical={`${config.siteUrl}/blog/${slug}`}
+        openGraph={{
+          type: 'article',
+          article: {
+            publishedTime: date,
+            tags,
+          },
+        }}
+      />
+
+      <article>
+        <Container as="header" isBig>
+          <Heading
+            textColor="primary"
+            looksLike="h2"
+            css={`
+              text-align: center;
+            `}
+          >
+            {title}
+          </Heading>
+        </Container>
+
+        <ArticleMeta isBig>
+          Published <PubDate dateString={date} isPubdate />
+        </ArticleMeta>
+
+        <Container
           css={`
-            text-align: center;
+            margin-bottom: ${themeGet('space.xl')};
           `}
         >
-          {title}
-        </Heading>
-      </Container>
+          <BannerStyles>
+            <ResponsiveImage imageSrc={`${slug}/${image}`} />
+            <figcaption>
+              <Markdown>{imageCredit}</Markdown>
+            </figcaption>
+          </BannerStyles>
+        </Container>
 
-      <ArticleMeta isBig>
-        Published <PubDate dateString={date} isPubdate />
-      </ArticleMeta>
-
-      <Container
-        css={`
-          margin-bottom: ${themeGet('space.xl')};
-        `}
-      >
-        <BannerStyles>
-          <ResponsiveImage imageSrc={`${slug}/${image}`} />
-          <figcaption>
-            <Markdown>{imageCredit}</Markdown>
-          </figcaption>
-        </BannerStyles>
-      </Container>
-
-      <Container as="section">{content}</Container>
-    </article>
+        <Container as="section">{content}</Container>
+      </article>
+    </>
   );
 }
 
