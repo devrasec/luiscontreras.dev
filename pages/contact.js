@@ -19,10 +19,9 @@ export default function ContactPage() {
       <Container as="main" role="main">
         <Heading textColor="primary">Contact</Heading>
 
-        <p>
-          Hey! Looking to get in touch? don't be affraid to contact me!. If you'd like to contact
-          me, here is how you can do it:
-        </p>
+        <p>Hey! Looking to get in touch? Don't be afraid of doing it!</p>
+
+        <p>If you'd like to contact me, here's how you can do it:</p>
 
         <ul>
           <li>
