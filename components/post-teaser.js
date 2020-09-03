@@ -39,7 +39,7 @@ const PostTeaser = ({ post, className }) => {
     <PostTeaserStyles className={className}>
       <TeaserHeading>
         {slug ? (
-          <Link href="/blog/[slug]" as={`/blog/${slug}`}>
+          <Link href="/blog/[...slug]" as={`/blog/${slug}`}>
             <a>{title}</a>
           </Link>
         ) : (

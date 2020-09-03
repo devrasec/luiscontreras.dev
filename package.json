@@ -8,7 +8,7 @@
   "author": "Luis Contreras <one.tmac@gmail.com> (https://luiscontreras.dev)",
   "license": "MIT",
   "scripts": {
-    "dev": "next",
+    "dev": "next-remote-watch ./content",
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
@@ -17,6 +17,7 @@
   "dependencies": {
     "@styled-system/theme-get": "^5.1.2",
     "date-fns": "^2.16.0",
+    "fast-glob": "^3.2.4",
     "gray-matter": "^4.0.2",
     "lodash": "^4.17.20",
     "next": "^9.5.2",
@@ -50,6 +51,7 @@
     "imagemin-mozjpeg": "^9.0.0",
     "jimp": "^0.16.0",
     "lint-staged": "^10.2.13",
+    "next-remote-watch": "^0.2.0",
     "prettier": "^2.1.1",
     "responsive-loader": "^2.0.2"
   },
