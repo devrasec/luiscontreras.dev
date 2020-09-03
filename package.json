@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@styled-system/theme-get": "^5.1.2",
-    "date-fns": "^2.16.0",
+    "date-fns": "^2.16.1",
     "fast-glob": "^3.2.4",
     "gray-matter": "^4.0.2",
     "lodash": "^4.17.20",
@@ -25,7 +25,7 @@
     "next-mdx-remote": "^1.0.0",
     "next-optimized-images": "^2.6.2",
     "next-seo": "^4.7.3",
-    "polished": "^3.6.5",
+    "polished": "^3.6.6",
     "raw-loader": "^4.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -49,8 +49,8 @@
     "husky": "^4.2.5",
     "image-trace-loader": "^1.0.2",
     "imagemin-mozjpeg": "^9.0.0",
-    "jimp": "^0.16.0",
-    "lint-staged": "^10.2.13",
+    "jimp": "^0.16.1",
+    "lint-staged": "^10.3.0",
     "next-remote-watch": "^0.2.0",
     "prettier": "^2.1.1",
     "responsive-loader": "^2.0.2"
