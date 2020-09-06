@@ -9,6 +9,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "next-remote-watch ./content",
+    "dev:debug": "NODE_OPTIONS='--inspect' next-remote-watch ./content",
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
