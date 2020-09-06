@@ -3,17 +3,11 @@ import { FaGithub, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import { IconContext } from 'react-icons';
 import styled from 'styled-components';
 import { themeGet } from '@styled-system/theme-get';
-
+import Link from './primitives/link';
 import websiteConfig from '../config/website';
 
 const { socialLinks } = websiteConfig;
 
-const commonLinkProps = {
-  rel: 'noreferrer noopener',
-  target: '_blank',
-};
-
-// TODO: Create links component (anchors).
 const SocialLinksStyles = styled.div`
   display: flex;
   justify-content: center;
@@ -34,21 +28,21 @@ const SocialLinksStyles = styled.div`
 const SocialLinks = ({ className, iconColor = 'primary', iconHoverColor = 'secondary' }) => (
   <SocialLinksStyles className={className} iconColor={iconColor} iconHoverColor={iconHoverColor}>
     <IconContext.Provider value={{ size: '2rem' }}>
-      <a href={socialLinks.twitter} {...commonLinkProps}>
+      <Link to={socialLinks.twitter} openNewTab>
         <FaTwitter />
-      </a>
+      </Link>
 
-      <a href={socialLinks.github} {...commonLinkProps}>
+      <Link to={socialLinks.github} openNewTab>
         <FaGithub />
-      </a>
+      </Link>
 
-      <a href={socialLinks.linkedin} {...commonLinkProps}>
+      <Link to={socialLinks.linkedin} openNewTab>
         <FaLinkedin />
-      </a>
+      </Link>
 
-      <a href={socialLinks.instagram} {...commonLinkProps}>
+      <Link to={socialLinks.instagram} openNewTab>
         <FaInstagram />
-      </a>
+      </Link>
     </IconContext.Provider>
   </SocialLinksStyles>
 );
