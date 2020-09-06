@@ -12,6 +12,7 @@ import Button from '../components/button';
 import TeaserHeading from '../components/styles/teaser-heading';
 import PostDate from '../components/styles/post-date';
 import Heading from '../components/primitives/heading';
+import { getLatestPosts } from '../lib/posts';
 
 const PostTeaser = styled(BasePostTeaser)``;
 
@@ -64,23 +65,6 @@ const ContactCalloutStyles = styled(Section)`
   }
 `;
 
-const posts = [
-  {
-    _id: 'adfqqaduafdfauqeh',
-    title: 'When should you be using Web Workers?',
-    summary:
-      'Keeping the frame rate stable is vital for virtual reality applications. Off-main-thread architecture can help ensure that the frames keep shipping.',
-    date: 'May 8, 2020',
-  },
-  {
-    _id: 'adfqqaduaqequfiqn',
-    title: 'How to Build a Consistent Content Creation Habit',
-    summary:
-      'If your goal is to be more consistent with content, your instinct may be to make a plan. But trying to plan your way to a creative habit is a mistake.',
-    date: 'May 8, 2020',
-  },
-];
-
 const talks = [
   {
     _id: 'qeruifaiqeifyq',
@@ -108,68 +92,78 @@ const talks = [
   },
 ];
 
-const HomePage = () => (
-  <>
-    <NextSeo title="Luis Contreras" titleTemplate="%s - Software Engineer" />
-    <main role="main">
-      <FrontHero />
-      <Container isBig>
-        <Section>
-          <Card heading="Writing" icon={FaFeather}>
-            <TeaserListStyles>
-              {posts.map(post => (
-                <PostTeaser key={post._id} post={post} />
-              ))}
-              <div className="card-footer">
-                <Link href="/blog" passHref>
-                  <Button as="a">All Posts</Button>
-                </Link>
-              </div>
-            </TeaserListStyles>
-          </Card>
-        </Section>
-
-        <Section>
-          <Card heading="Talks" icon={FaMicrophoneAlt}>
-            {talks.map(({ _id, title, summary, date, eventLink, place, talkLink }) => (
-              <TalkStyles key={_id}>
-                <TeaserHeading>{title}</TeaserHeading>
-                <PostDate>{date}</PostDate>
-                <p>{summary}</p>
-                <div>
-                  <strong>Event website:</strong>{' '}
-                  <a href={eventLink.url} target="_blank" rel="noreferrer noopener">
-                    {eventLink.name}
-                  </a>
+export default function HomePage({ latestPosts }) {
+  return (
+    <>
+      <NextSeo title="Luis Contreras" titleTemplate="%s - Software Engineer" />
+      <main role="main">
+        <FrontHero />
+        <Container isBig>
+          <Section>
+            <Card heading="Writing" icon={FaFeather}>
+              <TeaserListStyles>
+                {latestPosts.map(post => (
+                  <PostTeaser key={post.id} post={post} />
+                ))}
+                <div className="card-footer">
+                  <Link href="/blog" passHref>
+                    <Button as="a">All Posts</Button>
+                  </Link>
                 </div>
-                {talkLink && (
+              </TeaserListStyles>
+            </Card>
+          </Section>
+
+          <Section>
+            <Card heading="Talks" icon={FaMicrophoneAlt}>
+              {talks.map(({ _id, title, summary, date, eventLink, place, talkLink }) => (
+                <TalkStyles key={_id}>
+                  <TeaserHeading>{title}</TeaserHeading>
+                  <PostDate>{date}</PostDate>
+                  <p>{summary}</p>
                   <div>
-                    <a href={talkLink} target="_blank" rel="noreferrer noopener">
-                      Watch the recorded talk
+                    <strong>Event website:</strong>{' '}
+                    <a href={eventLink.url} target="_blank" rel="noreferrer noopener">
+                      {eventLink.name}
                     </a>
                   </div>
-                )}
-                <div className="place">
-                  <FaMapMarkerAlt /> {place}
-                </div>
-              </TalkStyles>
-            ))}
-          </Card>
-        </Section>
-      </Container>
-    </main>
+                  {talkLink && (
+                    <div>
+                      <a href={talkLink} target="_blank" rel="noreferrer noopener">
+                        Watch the recorded talk
+                      </a>
+                    </div>
+                  )}
+                  <div className="place">
+                    <FaMapMarkerAlt /> {place}
+                  </div>
+                </TalkStyles>
+              ))}
+            </Card>
+          </Section>
+        </Container>
+      </main>
 
-    <ContactCalloutStyles as="div">
-      <Container isBig>
-        <Heading as="h2" looksLike="h3" textColor="blue.default">
-          Have something to discuss with me or just want to say Hello?
-        </Heading>
-        <Link href="/contact" passHref>
-          <Button as="a">Start a conversation</Button>
-        </Link>
-      </Container>
-    </ContactCalloutStyles>
-  </>
-);
+      <ContactCalloutStyles as="div">
+        <Container isBig>
+          <Heading as="h2" looksLike="h3" textColor="blue.default">
+            Have something to discuss with me or just want to say Hello?
+          </Heading>
+          <Link href="/contact" passHref>
+            <Button as="a">Start a conversation</Button>
+          </Link>
+        </Container>
+      </ContactCalloutStyles>
+    </>
+  );
+}
 
-export default HomePage;
+export async function getStaticProps() {
+  const latestPosts = await getLatestPosts();
+
+  return {
+    props: {
+      latestPosts,
+    },
+  };
+}
