@@ -4,6 +4,7 @@ import Link from 'next/link';
 import PostDate from './styles/post-date';
 import TeaserHeading from './styles/teaser-heading';
 import BaseTag from './tag';
+import Date from './date';
 
 const Tag = styled(BaseTag)``;
 
@@ -46,7 +47,7 @@ const PostTeaser = ({ post, className }) => {
           title
         )}
       </TeaserHeading>
-      <PostDate>{date}</PostDate>
+      <PostDate as={Date} dateString={date} />
       <p>{summary}</p>
       <div className="tags">
         {tags.map(tag => (
