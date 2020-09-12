@@ -76,7 +76,7 @@ const talks = [
       url: 'https://barcamp.org.do/',
     },
     talkLink: 'https://www.youtube.com/watch?v=9P3sLqSiswE',
-    place: 'Santo Domingo, Dominican Republic',
+    place: 'Santiago, Dominican Republic',
   },
   {
     _id: 'urruifqiqeiadf',
