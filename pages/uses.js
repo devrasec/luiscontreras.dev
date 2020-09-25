@@ -266,11 +266,11 @@ export default function ContactPage() {
 
         <ul>
           <li>
-            <strong>Macbook Pro (13-inch, 2016)</strong>
+            <strong>Macbook Pro (13-inch, 2020)</strong>
             <ul>
-              <li>Processor: 2.9 GHz Dual-Core Intel Core i5</li>
-              <li>Memory: 8 GB 2133 MHz LPDDR3</li>
-              <li>Storage: 256 GB SSD</li>
+              <li>Processor: 2.0 GHz Quad-Core Intel Core i5</li>
+              <li>Memory: 16 GB 3733 MHz LPDDR4X</li>
+              <li>Storage: 512 GB SSD</li>
             </ul>
           </li>
           <li>
