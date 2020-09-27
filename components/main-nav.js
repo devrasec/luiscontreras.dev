@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import styled, { css } from 'styled-components';
 import { themeGet } from '@styled-system/theme-get';
 import { useRouter } from 'next/router';
+import FocusLock from 'react-focus-lock';
 import SocialLinks from './social-links';
 import { tablet } from '../lib/breakpoints';
 import Link from './primitives/link';
@@ -102,6 +103,7 @@ const ToggleButton = styled.button`
   cursor: pointer;
   height: 44px;
   padding: 10px;
+  order: 1;
   background: ${props =>
     props.isToggleOn ? themeGet(toggleButtonActiveColor)(props) : 'transparent'};
 
@@ -154,39 +156,41 @@ const MainNav = () => {
       </ToggleButton>
 
       {isToggleOn && (
-        <MenuOverlay>
-          <nav>
-            <ul>
-              <li>
-                <Link to="/">
-                  <a>Home</a>
-                </Link>
-              </li>
-              <li>
-                <Link to="/blog">
-                  <a>Blog</a>
-                </Link>
-              </li>
-              <li>
-                <Link to="/about">
-                  <a>About</a>
-                </Link>
-              </li>
-              <li>
-                <Link to="/uses">
-                  <a>Uses</a>
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact">
-                  <a>Contact</a>
-                </Link>
-              </li>
-            </ul>
-          </nav>
+        <FocusLock autoFocus={false}>
+          <MenuOverlay>
+            <nav>
+              <ul>
+                <li>
+                  <Link to="/">
+                    <a>Home</a>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/blog">
+                    <a>Blog</a>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/about">
+                    <a>About</a>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/uses">
+                    <a>Uses</a>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/contact">
+                    <a>Contact</a>
+                  </Link>
+                </li>
+              </ul>
+            </nav>
 
-          <SocialLinks iconHoverColor="white" />
-        </MenuOverlay>
+            <SocialLinks iconHoverColor="white" />
+          </MenuOverlay>
+        </FocusLock>
       )}
     </>
   );
