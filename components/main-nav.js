@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import styled, { css } from 'styled-components';
 import { themeGet } from '@styled-system/theme-get';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 import SocialLinks from './social-links';
 import { tablet } from '../lib/breakpoints';
+import Link from './primitives/link';
 
 const barHeight = '4px';
 const barWidth = '40px';
@@ -87,6 +87,10 @@ const MenuOverlay = styled.div`
       }
     }
   }
+
+  a:focus {
+    box-shadow: ${themeGet('shadows.outlineDarkBg')};
+  }
 `;
 
 const toggleButtonActiveColor = 'colors.primary';
@@ -154,27 +158,27 @@ const MainNav = () => {
           <nav>
             <ul>
               <li>
-                <Link href="/">
+                <Link to="/">
                   <a>Home</a>
                 </Link>
               </li>
               <li>
-                <Link href="/blog">
+                <Link to="/blog">
                   <a>Blog</a>
                 </Link>
               </li>
               <li>
-                <Link href="/about">
+                <Link to="/about">
                   <a>About</a>
                 </Link>
               </li>
               <li>
-                <Link href="/uses">
+                <Link to="/uses">
                   <a>Uses</a>
                 </Link>
               </li>
               <li>
-                <Link href="/contact">
+                <Link to="/contact">
                   <a>Contact</a>
                 </Link>
               </li>
