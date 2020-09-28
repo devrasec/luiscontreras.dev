@@ -1,5 +1,5 @@
 import { NextSeo } from 'next-seo';
-import { getAllPosts } from '../lib/posts';
+import { getPosts } from '../lib/posts';
 import Heading from '../components/primitives/heading';
 import Container from '../components/container';
 import PostTeaser from '../components/post-teaser';
@@ -39,7 +39,7 @@ export default function BlogPage({ allPostsData }) {
 }
 
 export async function getStaticProps() {
-  const allPostsData = await getAllPosts();
+  const allPostsData = await getPosts();
 
   return {
     props: {

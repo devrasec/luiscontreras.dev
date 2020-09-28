@@ -15,7 +15,7 @@ const TeaserHeading = ({ className, children }) => (
     `}
     as="h3"
     looksLike="h4"
-    textColor="secondary"
+    textColor="primary"
     className={className}
   >
     {children}
