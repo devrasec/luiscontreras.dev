@@ -102,9 +102,14 @@ export default function HomePage({ latestPosts }) {
           <Section>
             <Card heading="Writing" icon={FaFeather}>
               <TeaserListStyles>
-                {latestPosts.map(post => (
-                  <PostTeaser key={post.id} post={post} />
-                ))}
+                {latestPosts.length ? (
+                  latestPosts.map(post => <PostTeaser key={post.id} post={post} />)
+                ) : (
+                  <>
+                    <p>I'm getting started so bear with me 🙂</p>
+                    <p>Soon it's gonna be a lot of posts here, I promise.</p>
+                  </>
+                )}
                 <div className="card-footer">
                   <Link href="/blog" passHref>
                     <Button as="a">All Posts</Button>
