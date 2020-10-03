@@ -106,7 +106,12 @@ export default function HomePage({ latestPosts }) {
                   latestPosts.map(post => <PostTeaser key={post.id} post={post} />)
                 ) : (
                   <>
-                    <p>I'm getting started so bear with me 🙂</p>
+                    <p>
+                      I'm getting started so bear with me{' '}
+                      <span role="img" aria-label="Slightly Smiling Face">
+                        🙂
+                      </span>
+                    </p>
                     <p>Soon it's gonna be a lot of posts here, I promise.</p>
                   </>
                 )}
