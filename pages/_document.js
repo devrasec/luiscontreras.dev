@@ -35,13 +35,15 @@ export default class SiteDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <script
-            src={`https://www.googletagmanager.com/gtag/js?id=${config.ga.trackingId}`}
-            async
-          />
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
+          {process.env.ENV === 'production' && (
+            <>
+              <script
+                src={`https://www.googletagmanager.com/gtag/js?id=${config.ga.trackingId}`}
+                async
+              />
+              <script
+                dangerouslySetInnerHTML={{
+                  __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
@@ -49,8 +51,10 @@ export default class SiteDocument extends Document {
               page_path: window.location.pathname,
             });
           `,
-            }}
-          />
+                }}
+              />
+            </>
+          )}
           <link
             href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:ital,wght@0,400;0,700;1,400;1,700&display=swap"
             rel="stylesheet"
