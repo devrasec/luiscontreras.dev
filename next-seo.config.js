@@ -7,8 +7,6 @@ export default {
   titleTemplate: '%s - Luis Contreras',
   description,
   canonical: siteUrl,
-  dangerouslySetAllPagesToNoIndex: true, // Remove before going to production
-  dangerouslySetAllPagesToNoFollow: true, // Remove before going to production
   openGraph: {
     title: 'Luis Contreras - Software Engineer',
     description,

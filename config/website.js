@@ -9,6 +9,9 @@ const websiteConfig = {
     linkedin: 'https://www.linkedin.com/in/luiscontreras26/',
     instagram: 'https://www.instagram.com/luiscontreras.dev/',
   },
+  ga: {
+    trackingId: 'UA-179609159-1',
+  },
 };
 
 export default websiteConfig;

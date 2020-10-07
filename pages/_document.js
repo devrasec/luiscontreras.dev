@@ -1,5 +1,7 @@
+/* eslint-disable react/no-danger */
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
+import config from '../config/website';
 
 export default class SiteDocument extends Document {
   static async getInitialProps(ctx) {
@@ -33,6 +35,26 @@ export default class SiteDocument extends Document {
     return (
       <Html lang="en">
         <Head>
+          {process.env.ENV === 'production' && (
+            <>
+              <script
+                src={`https://www.googletagmanager.com/gtag/js?id=${config.ga.trackingId}`}
+                async
+              />
+              <script
+                dangerouslySetInnerHTML={{
+                  __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${config.ga.trackingId}', {
+              page_path: window.location.pathname,
+            });
+          `,
+                }}
+              />
+            </>
+          )}
           <link
             href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:ital,wght@0,400;0,700;1,400;1,700&display=swap"
             rel="stylesheet"
