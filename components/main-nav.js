@@ -55,7 +55,10 @@ const MenuOverlay = styled.div`
   position: absolute;
   left: 0;
   top: 60px;
-  background: ${themeGet('colors.secondary')};
+  background-color: #1b325f;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 1000'%3E%3Cg %3E%3Ccircle fill='%231b325f' cx='50' cy='0' r='50'/%3E%3Cg fill='%23293565' %3E%3Ccircle cx='0' cy='50' r='50'/%3E%3Ccircle cx='100' cy='50' r='50'/%3E%3C/g%3E%3Ccircle fill='%2336376b' cx='50' cy='100' r='50'/%3E%3Cg fill='%2343396f' %3E%3Ccircle cx='0' cy='150' r='50'/%3E%3Ccircle cx='100' cy='150' r='50'/%3E%3C/g%3E%3Ccircle fill='%23503a73' cx='50' cy='200' r='50'/%3E%3Cg fill='%235d3c77' %3E%3Ccircle cx='0' cy='250' r='50'/%3E%3Ccircle cx='100' cy='250' r='50'/%3E%3C/g%3E%3Ccircle fill='%236a3d79' cx='50' cy='300' r='50'/%3E%3Cg fill='%23773d7b' %3E%3Ccircle cx='0' cy='350' r='50'/%3E%3Ccircle cx='100' cy='350' r='50'/%3E%3C/g%3E%3Ccircle fill='%23843e7c' cx='50' cy='400' r='50'/%3E%3Cg fill='%23903f7c' %3E%3Ccircle cx='0' cy='450' r='50'/%3E%3Ccircle cx='100' cy='450' r='50'/%3E%3C/g%3E%3Ccircle fill='%239c407b' cx='50' cy='500' r='50'/%3E%3Cg fill='%23a84179' %3E%3Ccircle cx='0' cy='550' r='50'/%3E%3Ccircle cx='100' cy='550' r='50'/%3E%3C/g%3E%3Ccircle fill='%23b44277' cx='50' cy='600' r='50'/%3E%3Cg fill='%23be4473' %3E%3Ccircle cx='0' cy='650' r='50'/%3E%3Ccircle cx='100' cy='650' r='50'/%3E%3C/g%3E%3Ccircle fill='%23c84770' cx='50' cy='700' r='50'/%3E%3Cg fill='%23d24b6b' %3E%3Ccircle cx='0' cy='750' r='50'/%3E%3Ccircle cx='100' cy='750' r='50'/%3E%3C/g%3E%3Ccircle fill='%23da5066' cx='50' cy='800' r='50'/%3E%3Cg fill='%23e15561' %3E%3Ccircle cx='0' cy='850' r='50'/%3E%3Ccircle cx='100' cy='850' r='50'/%3E%3C/g%3E%3Ccircle fill='%23e85c5b' cx='50' cy='900' r='50'/%3E%3Cg fill='%23ee6355' %3E%3Ccircle cx='0' cy='950' r='50'/%3E%3Ccircle cx='100' cy='950' r='50'/%3E%3C/g%3E%3Ccircle fill='%23f26b4e' cx='50' cy='1000' r='50'/%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: contain;
   padding-top: ${themeGet('space.xl')};
   overflow: auto;
   ${tablet} {
