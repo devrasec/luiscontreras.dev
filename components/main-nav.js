@@ -6,13 +6,13 @@ import FocusLock from 'react-focus-lock';
 import SocialLinks from './social-links';
 import { tablet } from '../lib/breakpoints';
 import Link from './primitives/link';
+import { fancyBg } from '../theme/mixins';
 
 const barHeight = '4px';
 const barWidth = '40px';
-const barColor = 'colors.primary';
 
 const barStyles = css`
-  background-color: ${themeGet(barColor)};
+  background-color: ${themeGet('colors.primary')};
   height: ${barHeight};
   right: 10px;
   position: absolute;
@@ -50,12 +50,12 @@ const MenuIcon = styled.div`
 `;
 
 const MenuOverlay = styled.div`
+  ${fancyBg};
   width: 100%;
   height: calc(100vh - 60px);
   position: absolute;
   left: 0;
   top: 60px;
-  background: ${themeGet('colors.secondary')};
   padding-top: ${themeGet('space.xl')};
   overflow: auto;
   ${tablet} {
@@ -83,14 +83,14 @@ const MenuOverlay = styled.div`
         transition: color 200ms ease-in-out;
 
         &:hover {
-          color: ${themeGet('colors.primary')};
+          color: ${themeGet('colors.secondary')};
         }
       }
     }
   }
 
   a:focus {
-    box-shadow: ${themeGet('shadows.outlineDarkBg')};
+    box-shadow: ${themeGet('shadows.outline')};
   }
 `;
 
@@ -188,7 +188,7 @@ const MainNav = () => {
               </ul>
             </nav>
 
-            <SocialLinks iconHoverColor="white" />
+            <SocialLinks iconHoverColor="secondary" iconColor="white" />
           </MenuOverlay>
         </FocusLock>
       )}

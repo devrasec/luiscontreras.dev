@@ -5,9 +5,10 @@ import { untilDesktop, tablet, mobilePlus, large } from '../lib/breakpoints';
 import SocialLinks from './social-links';
 import Button from './button';
 import Heading from './primitives/heading';
+import { fancyBg } from '../theme/mixins';
 
 const Hero = styled.section`
-  background: url('/images/hero-bg.jpg') no-repeat top center / cover;
+  ${fancyBg};
   color: ${themeGet('colors.white')};
   padding-top: 58px;
   padding-bottom: ${themeGet('space.lg')};
