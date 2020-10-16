@@ -13,7 +13,7 @@ const GlobalStyle = createGlobalStyle`
 
   :focus {
     outline: none;
-    box-shadow: 0 0 0 3px ${themeGet('colors.orange')};
+    box-shadow: ${themeGet('shadows.outline')};
   }
 
   ::selection {

@@ -66,8 +66,7 @@ export default {
 
   shadows: {
     subtle: '2px 2px 15px rgba(0, 0, 0, 0.07)',
-    outlineLightBg: `0 0 0 3px ${colors.orange}`,
-    outlineDarkBg: `0 0 0 3px ${colors.blue.dark}`,
+    outline: `0 0 0 3px ${colors.orange}`,
   },
 
   gap,

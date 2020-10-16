@@ -10,10 +10,9 @@ import { fancyBg } from '../theme/mixins';
 
 const barHeight = '4px';
 const barWidth = '40px';
-const barColor = 'colors.primary';
 
 const barStyles = css`
-  background-color: ${themeGet(barColor)};
+  background-color: ${themeGet('colors.primary')};
   height: ${barHeight};
   right: 10px;
   position: absolute;
@@ -84,14 +83,14 @@ const MenuOverlay = styled.div`
         transition: color 200ms ease-in-out;
 
         &:hover {
-          color: ${themeGet('colors.primary')};
+          color: ${themeGet('colors.secondary')};
         }
       }
     }
   }
 
   a:focus {
-    box-shadow: ${themeGet('shadows.outlineDarkBg')};
+    box-shadow: ${themeGet('shadows.outline')};
   }
 `;
 
@@ -189,7 +188,7 @@ const MainNav = () => {
               </ul>
             </nav>
 
-            <SocialLinks iconHoverColor="white" />
+            <SocialLinks iconHoverColor="secondary" iconColor="white" />
           </MenuOverlay>
         </FocusLock>
       )}
