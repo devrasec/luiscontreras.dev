@@ -36,7 +36,7 @@ export default function ContactPage() {
           </li>
 
           <li>
-            Send me an email to <a href="mailto:hello@luiscontreras.dev">luis@luiscontreras.dev</a>
+            Send me an email to <a href="mailto:hello@luiscontreras.dev">hello@luiscontreras.dev</a>
           </li>
         </ul>
       </Container>
