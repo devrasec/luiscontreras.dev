@@ -82,7 +82,7 @@ const talks = [
     _id: 'urruifqiqeiadf',
     title: 'Modern Web Application Development with React',
     summary:
-      'A React workshop for beginners, the workshop took place at Local Hack Day Santo Domingo, an event organized by Major League Hacking.',
+      'A React workshop for beginners, the workshop took place at the Local Hack Day Santo Domingo, an event organized by MLH.',
     date: 'Dec 1, 2018',
     eventLink: {
       name: 'localhackday.mlh.io',
@@ -112,7 +112,7 @@ export default function HomePage({ latestPosts }) {
                         🙂
                       </span>
                     </p>
-                    <p>Soon it's gonna be a lot of posts here, I promise.</p>
+                    <p>Very soon there will be many posts here, I promise.</p>
                   </>
                 )}
                 <div className="card-footer">
