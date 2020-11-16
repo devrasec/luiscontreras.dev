@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 import { themeGet } from '@styled-system/theme-get';
 import { normalize } from 'polished';
+import { tablet } from '../lib/breakpoints';
 
 const GlobalStyle = createGlobalStyle`
   ${normalize()};
@@ -73,6 +74,35 @@ const GlobalStyle = createGlobalStyle`
     height: 100%;
     display: flex;
     flex-direction: column;
+  }
+
+  blockquote {
+    position: relative;
+    margin: 2rem auto;
+    padding: 1rem 1rem 1rem 3rem;
+    border-left: 5px solid ${themeGet('colors.primary')};
+    background: ${themeGet('colors.gray.light')};
+    border-radius: 9px;
+
+    ${tablet} {
+      max-width: 650px;
+    }
+
+    p {
+      font-style: italic;
+    }
+
+    &::before {
+      content: open-quote;
+      font-size: 6rem;
+      font-family: ${themeGet('fonts.heading')};
+      margin-right: 0.25em;
+      line-height: 0;
+      color: ${themeGet('colors.secondary')};
+      position: absolute;
+      left: 0;
+      top: 0.5em;
+    }
   }
 `;
 
