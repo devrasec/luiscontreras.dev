@@ -36,6 +36,8 @@ export default function Post({ postData, mdxSource }) {
   const { title, imageCredit, image, date, slug, seoTitle, seoKeywords, summary, tags } = postData;
   const content = hydrate(mdxSource, { components });
   const { ResponsiveImage } = components;
+  const imagePath = `${slug}/${image}`;
+  const img = require(`../../content/posts/${imagePath}?resize&size=1200`);
 
   return (
     <>
@@ -50,6 +52,13 @@ export default function Post({ postData, mdxSource }) {
             publishedTime: date,
             tags,
           },
+          images: [
+            {
+              url: `${config.siteUrl}${img.src}`,
+              width: img.width,
+              height: img.height,
+            },
+          ],
         }}
       />
 
@@ -70,18 +79,22 @@ export default function Post({ postData, mdxSource }) {
           Published <PubDate dateString={date} isPubdate />
         </ArticleMeta>
 
-        <Container
-          css={`
-            margin-bottom: ${themeGet('space.xl')};
-          `}
-        >
-          <BannerStyles>
-            <ResponsiveImage imageSrc={`${slug}/${image}`} />
-            <figcaption>
-              <Markdown>{imageCredit}</Markdown>
-            </figcaption>
-          </BannerStyles>
-        </Container>
+        {image && (
+          <Container
+            css={`
+              margin-bottom: ${themeGet('space.xl')};
+            `}
+          >
+            <BannerStyles>
+              <ResponsiveImage imageSrc={imagePath} />
+              {imageCredit && (
+                <figcaption>
+                  <Markdown>{imageCredit}</Markdown>
+                </figcaption>
+              )}
+            </BannerStyles>
+          </Container>
+        )}
 
         <Container as="section">{content}</Container>
       </article>

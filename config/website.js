@@ -2,7 +2,7 @@ const websiteConfig = {
   pageTitle: 'Luis Contreras',
   pageDescription:
     'Luis Contreras, Software Engineer in Stockholm. Sharing my knowledge of Web Development.',
-  siteUrl: 'https://luiscontreras.dev',
+  siteUrl: process.env.ENV === 'production' ? 'https://luiscontreras.dev' : 'http://localhost:3000',
   socialLinks: {
     twitter: 'https://twitter.com/devrasec/',
     github: 'https://github.com/devrasec/',
