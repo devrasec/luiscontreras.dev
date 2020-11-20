@@ -7,6 +7,7 @@ export default {
   titleTemplate: '%s - Luis Contreras',
   description,
   canonical: siteUrl,
+  author: 'Luis Contreras',
   openGraph: {
     title: 'Luis Contreras - Software Engineer',
     description,
