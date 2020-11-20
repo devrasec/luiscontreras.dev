@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { themeGet } from '@styled-system/theme-get';
-
+import Link from 'next/link';
 import MainNav from './main-nav';
 import { tablet, untilMobilePlus } from '../lib/breakpoints';
 
@@ -34,21 +34,24 @@ const BrandName = styled.div`
 
 const Header = () => (
   <HeaderStyles>
-    <div
-      css={`
-        display: flex;
-        align-items: center;
-      `}
-    >
-      <img
+    <Link href="/" passHref>
+      <a
         css={`
-          width: 48px;
+          display: flex;
+          align-items: center;
+          text-decoration: none;
         `}
-        alt="website logo"
-        src="/images/logo.svg"
-      />
-      <BrandName>Luis Contreras</BrandName>
-    </div>
+      >
+        <img
+          css={`
+            width: 48px;
+          `}
+          alt="website logo"
+          src="/images/logo.svg"
+        />
+        <BrandName>Luis Contreras</BrandName>
+      </a>
+    </Link>
 
     <MainNav />
   </HeaderStyles>
