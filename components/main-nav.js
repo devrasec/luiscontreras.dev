@@ -2,10 +2,10 @@ import { useState, useEffect } from 'react';
 import styled, { css } from 'styled-components';
 import { themeGet } from '@styled-system/theme-get';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 import FocusLock from 'react-focus-lock';
 import SocialLinks from './social-links';
 import { tablet } from '../lib/breakpoints';
-import Link from './primitives/link';
 import { fancyBg } from '../theme/mixins';
 
 const barHeight = '4px';
@@ -127,15 +127,15 @@ const MainNav = () => {
     } else {
       document.body.classList.remove('menu-open');
     }
-  });
+  }, [isToggleOn]);
 
   useEffect(() => {
     const hideMenu = () => setToggle(false);
 
-    router.events.on('routeChangeStart', hideMenu);
+    router.events.on('routeChangeComplete', hideMenu);
 
-    return () => router.events.off('routeChangeStart', hideMenu);
-  });
+    return () => router.events.off('routeChangeComplete', hideMenu);
+  }, [router]);
 
   return (
     <>
@@ -161,27 +161,27 @@ const MainNav = () => {
             <nav>
               <ul>
                 <li>
-                  <Link to="/">
+                  <Link href="/">
                     <a>Home</a>
                   </Link>
                 </li>
                 <li>
-                  <Link to="/blog">
+                  <Link href="/blog">
                     <a>Blog</a>
                   </Link>
                 </li>
                 <li>
-                  <Link to="/about">
+                  <Link href="/about">
                     <a>About</a>
                   </Link>
                 </li>
                 <li>
-                  <Link to="/uses">
+                  <Link href="/uses">
                     <a>Uses</a>
                   </Link>
                 </li>
                 <li>
-                  <Link to="/contact">
+                  <Link href="/contact">
                     <a>Contact</a>
                   </Link>
                 </li>
