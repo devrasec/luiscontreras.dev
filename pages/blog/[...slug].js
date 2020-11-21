@@ -1,9 +1,10 @@
 /* eslint-disable import/no-dynamic-require, global-require */
 import renderToString from 'next-mdx-remote/render-to-string';
 import hydrate from 'next-mdx-remote/hydrate';
+import { parseISO, format } from 'date-fns';
 import omit from 'lodash/omit';
 import Markdown from 'react-markdown';
-import { NextSeo } from 'next-seo';
+import { NextSeo, ArticleJsonLd } from 'next-seo';
 import { themeGet } from '@styled-system/theme-get';
 import styled from 'styled-components';
 import { getAllPostSlugs, getPostBySlug } from '../../lib/posts';
@@ -38,13 +39,16 @@ export default function Post({ postData, mdxSource }) {
   const { ResponsiveImage } = components;
   const imagePath = `${slug}/${image}`;
   const img = require(`../../content/posts/${imagePath}?resize&size=1200`);
+  const postUrl = `${config.siteUrl}/blog/${slug}`;
+  const dateFormatted = format(parseISO(date), 'Y-M-d');
+  const postImageSrc = `${config.siteUrl}${img.src}`;
 
   return (
     <>
       <NextSeo
         title={seoTitle}
         description={summary}
-        canonical={`${config.siteUrl}/blog/${slug}`}
+        canonical={postUrl}
         openGraph={{
           type: 'article',
           article: {
@@ -53,12 +57,24 @@ export default function Post({ postData, mdxSource }) {
           },
           images: [
             {
-              url: `${config.siteUrl}${img.src}`,
+              url: postImageSrc,
               width: img.width,
               height: img.height,
             },
           ],
         }}
+      />
+
+      <ArticleJsonLd
+        url={postUrl}
+        title={seoTitle}
+        datePublished={dateFormatted}
+        dateModified={dateFormatted}
+        authorName="Luis Contreras"
+        publisherName="Luis Contreras"
+        publisherLogo={`${config.siteUrl}/images/logo.jpg`}
+        images={[postImageSrc]}
+        description={summary}
       />
 
       <article>
