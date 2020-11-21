@@ -33,7 +33,7 @@ const BannerStyles = styled.figure`
 `;
 
 export default function Post({ postData, mdxSource }) {
-  const { title, imageCredit, image, date, slug, seoTitle, seoKeywords, summary, tags } = postData;
+  const { title, imageCredit, image, date, slug, seoTitle, summary, tags } = postData;
   const content = hydrate(mdxSource, { components });
   const { ResponsiveImage } = components;
   const imagePath = `${slug}/${image}`;
@@ -44,7 +44,6 @@ export default function Post({ postData, mdxSource }) {
       <NextSeo
         title={seoTitle}
         description={summary}
-        additionalMetaTags={[{ name: 'keywords', content: seoKeywords.join(', ') }]}
         canonical={`${config.siteUrl}/blog/${slug}`}
         openGraph={{
           type: 'article',
