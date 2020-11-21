@@ -1,4 +1,5 @@
-import { NextSeo } from 'next-seo';
+import { NextSeo, BlogJsonLd } from 'next-seo';
+import { format, parseISO } from 'date-fns';
 import { getPosts } from '../lib/posts';
 import Heading from '../components/primitives/heading';
 import Container from '../components/container';
@@ -6,18 +7,30 @@ import PostTeaser from '../components/post-teaser';
 import config from '../config/website';
 
 const pageDescription =
-  'Read the Luis Contreras Blog to learn about Web Development. I write mostly about Javascript, CSS and React.';
+  'Luis Contreras is blogging about Web Development with strong focus in Javascript, CSS, and React.';
 
 export default function BlogPage({ allPostsData }) {
+  const pageUrl = `${config.siteUrl}/blog`;
+  const publishedDate = '2020-11-20'; // Hardcoded date of my first published post.
+
   return (
     <>
       <NextSeo
         title="Blog"
-        canonical={`${config.siteUrl}/blog`}
+        canonical={pageUrl}
         description={pageDescription}
         openGraph={{
           description: pageDescription,
         }}
+      />
+      <BlogJsonLd
+        url={pageUrl}
+        description={pageDescription}
+        title="Luis Contreras"
+        authorName="Luis Contreras"
+        datePublished={publishedDate}
+        dateModified={format(parseISO(allPostsData[0].date), 'Y-M-d')}
+        images={['https://pbs.twimg.com/profile_images/1324122242284965888/7xspob_j_400x400.jpg']}
       />
       <Container>
         <Heading textColor="primary">Blog</Heading>
