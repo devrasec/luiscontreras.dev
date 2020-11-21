@@ -10,7 +10,7 @@ const websiteConfig = {
     instagram: 'https://www.instagram.com/luiscontreras.dev/',
   },
   ga: {
-    trackingId: 'UA-179609159-1',
+    trackingId: 'G-Q2PLP3GS06',
   },
 };
 
