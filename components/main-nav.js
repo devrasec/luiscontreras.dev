@@ -58,6 +58,7 @@ const MenuOverlay = styled.div`
   top: 60px;
   padding-top: ${themeGet('space.xl')};
   overflow: auto;
+  z-index: 1;
   ${tablet} {
     height: calc(100vh - 80px);
     top: 80px;
