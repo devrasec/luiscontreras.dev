@@ -36,12 +36,8 @@ const BannerStyles = styled.figure`
 export default function Post({ postData, mdxSource }) {
   const { title, imageCredit, image, date, slug, seoTitle, summary, tags } = postData;
   const content = hydrate(mdxSource, { components });
-  const { ResponsiveImage } = components;
-  const imagePath = `${slug}/${image}`;
-  const img = require(`../../content/posts/${imagePath}?resize&size=1200`);
   const postUrl = `${config.siteUrl}/blog/${slug}`;
   const dateFormatted = format(parseISO(date), 'Y-M-d');
-  const postImageSrc = `${config.siteUrl}${img.src}`;
 
   return (
     <>
@@ -55,13 +51,13 @@ export default function Post({ postData, mdxSource }) {
             publishedTime: date,
             tags,
           },
-          images: [
-            {
-              url: postImageSrc,
-              width: img.width,
-              height: img.height,
-            },
-          ],
+          // images: [
+          //   {
+          //     url: postImageSrc,
+          //     width: img.width,
+          //     height: img.height,
+          //   },
+          // ],
         }}
       />
 
@@ -73,7 +69,7 @@ export default function Post({ postData, mdxSource }) {
         authorName="Luis Contreras"
         publisherName="Luis Contreras"
         publisherLogo={`${config.siteUrl}/images/logo.jpg`}
-        images={[postImageSrc]}
+        // images={[postImageSrc]}
         description={summary}
       />
 
@@ -101,7 +97,6 @@ export default function Post({ postData, mdxSource }) {
             `}
           >
             <BannerStyles>
-              <ResponsiveImage imageSrc={imagePath} />
               {imageCredit && (
                 <figcaption>
                   <Markdown>{imageCredit}</Markdown>
