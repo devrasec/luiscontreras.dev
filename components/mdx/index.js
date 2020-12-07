@@ -1,5 +1,4 @@
 /* eslint-disable react/display-name,react/jsx-props-no-spreading */
-import ResponsiveImage from './responsive-image';
 import Heading from '../primitives/heading';
 
 export default {
@@ -8,5 +7,4 @@ export default {
   h3: props => <Heading as="h3" looksLike="h4" textColor="primary" {...props} />,
   h4: props => <Heading as="h4" looksLike="h5" textColor="primary" {...props} />,
   h5: props => <Heading as="h5" textColor="primary" {...props} />,
-  ResponsiveImage,
 };

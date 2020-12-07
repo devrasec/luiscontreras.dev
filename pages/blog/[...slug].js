@@ -4,6 +4,7 @@ import hydrate from 'next-mdx-remote/hydrate';
 import { parseISO, format } from 'date-fns';
 import omit from 'lodash/omit';
 import Markdown from 'react-markdown';
+import Image from 'next/image';
 import { NextSeo, ArticleJsonLd } from 'next-seo';
 import { themeGet } from '@styled-system/theme-get';
 import styled from 'styled-components';
@@ -36,12 +37,10 @@ const BannerStyles = styled.figure`
 export default function Post({ postData, mdxSource }) {
   const { title, imageCredit, image, date, slug, seoTitle, summary, tags } = postData;
   const content = hydrate(mdxSource, { components });
-  const { ResponsiveImage } = components;
-  const imagePath = `${slug}/${image}`;
-  const img = require(`../../content/posts/${imagePath}?resize&size=1200`);
   const postUrl = `${config.siteUrl}/blog/${slug}`;
   const dateFormatted = format(parseISO(date), 'Y-M-d');
-  const postImageSrc = `${config.siteUrl}${img.src}`;
+  const postImageSrc = image ? `/images/posts/${slug}/${image}` : null;
+  const metaImage = postImageSrc && `https://luiscontreras.dev${postImageSrc}`;
 
   return (
     <>
@@ -57,9 +56,7 @@ export default function Post({ postData, mdxSource }) {
           },
           images: [
             {
-              url: postImageSrc,
-              width: img.width,
-              height: img.height,
+              url: metaImage,
             },
           ],
         }}
@@ -73,7 +70,7 @@ export default function Post({ postData, mdxSource }) {
         authorName="Luis Contreras"
         publisherName="Luis Contreras"
         publisherLogo={`${config.siteUrl}/images/logo.jpg`}
-        images={[postImageSrc]}
+        images={[metaImage]}
         description={summary}
       />
 
@@ -101,7 +98,13 @@ export default function Post({ postData, mdxSource }) {
             `}
           >
             <BannerStyles>
-              <ResponsiveImage imageSrc={imagePath} />
+              <Image
+                src={postImageSrc}
+                width="720"
+                height="480"
+                alt={`Cover image for ${title}`}
+                priority
+              />
               {imageCredit && (
                 <figcaption>
                   <Markdown>{imageCredit}</Markdown>
