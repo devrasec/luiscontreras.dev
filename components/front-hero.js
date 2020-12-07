@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { themeGet } from '@styled-system/theme-get';
 import Link from 'next/link';
+import Image from 'next/image';
 import { untilDesktop, tablet, mobilePlus, large } from '../lib/breakpoints';
 import SocialLinks from './social-links';
 import Button from './button';
@@ -53,13 +54,7 @@ const HeroContent = styled.div`
     img {
       border-radius: 50%;
       display: block;
-      height: 160px;
-      width: 160px;
       border: 3px solid ${themeGet('colors.secondary')};
-      ${tablet} {
-        height: 228px;
-        width: 228px;
-      }
     }
   }
 
@@ -123,7 +118,13 @@ const FrontHero = () => (
   <Hero>
     <HeroContent>
       <div className="hero-avatar">
-        <img src="/images/avatar.jpg" srcSet="/images/avatar@2x.jpg 2x" alt="Luis Contreras" />
+        <Image
+          src="/images/avatar@2x.jpg"
+          layout="responsive"
+          width="228"
+          height="228"
+          alt="Luis Contreras"
+        />
       </div>
       <div className="hero-intro">
         <Heading textColor="white" isBig>

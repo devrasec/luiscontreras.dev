@@ -4,6 +4,7 @@ import hydrate from 'next-mdx-remote/hydrate';
 import { parseISO, format } from 'date-fns';
 import omit from 'lodash/omit';
 import Markdown from 'react-markdown';
+import Image from 'next/image';
 import { NextSeo, ArticleJsonLd } from 'next-seo';
 import { themeGet } from '@styled-system/theme-get';
 import styled from 'styled-components';
@@ -38,6 +39,8 @@ export default function Post({ postData, mdxSource }) {
   const content = hydrate(mdxSource, { components });
   const postUrl = `${config.siteUrl}/blog/${slug}`;
   const dateFormatted = format(parseISO(date), 'Y-M-d');
+  const postImageSrc = image ? `/images/posts/${slug}/${image}` : null;
+  const metaImage = postImageSrc && `https://luiscontreras.dev${postImageSrc}`;
 
   return (
     <>
@@ -51,13 +54,11 @@ export default function Post({ postData, mdxSource }) {
             publishedTime: date,
             tags,
           },
-          // images: [
-          //   {
-          //     url: postImageSrc,
-          //     width: img.width,
-          //     height: img.height,
-          //   },
-          // ],
+          images: [
+            {
+              url: metaImage,
+            },
+          ],
         }}
       />
 
@@ -69,7 +70,7 @@ export default function Post({ postData, mdxSource }) {
         authorName="Luis Contreras"
         publisherName="Luis Contreras"
         publisherLogo={`${config.siteUrl}/images/logo.jpg`}
-        // images={[postImageSrc]}
+        images={[metaImage]}
         description={summary}
       />
 
@@ -97,6 +98,13 @@ export default function Post({ postData, mdxSource }) {
             `}
           >
             <BannerStyles>
+              <Image
+                src={postImageSrc}
+                width="720"
+                height="480"
+                alt={`Cover image for ${title}`}
+                priority
+              />
               {imageCredit && (
                 <figcaption>
                   <Markdown>{imageCredit}</Markdown>
