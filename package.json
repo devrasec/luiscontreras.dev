@@ -39,12 +39,11 @@
     "babel-plugin-styled-components": "^1.12.0",
     "eslint": "^7.7.0",
     "eslint-config-airbnb": "^18.2.0",
-    "eslint-config-contreras": "0.0.7",
+    "eslint-config-contreras": "0.1.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-html": "^6.0.3",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-jsx-a11y": "^6.3.1",
-    "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.20.6",
     "eslint-plugin-react-hooks": "^4.1.0",
     "husky": "^4.3.5",
@@ -58,6 +57,9 @@
     }
   },
   "lint-staged": {
-    "*.js": "eslint --cache --fix"
+    "*.js": [
+      "eslint --cache --fix",
+      "prettier --write"
+    ]
   }
 }
