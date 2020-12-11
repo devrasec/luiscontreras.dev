@@ -38,7 +38,7 @@
     "@babel/eslint-parser": "^7.12.1",
     "babel-plugin-styled-components": "^1.12.0",
     "eslint": "^7.15.0",
-    "eslint-config-contreras": "0.2.0",
+    "eslint-config-contreras": "^0.2.1",
     "eslint-config-prettier": "^7.0.0",
     "eslint-plugin-html": "^6.1.1",
     "eslint-plugin-import": "^2.22.1",
