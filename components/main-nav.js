@@ -23,7 +23,7 @@ const barStyles = css`
 const MenuIcon = styled.div`
   ${barStyles};
   top: 20px;
-  ${props => props.isToggleOn && `background-color: transparent`};
+  ${props => props.isToggleOn && 'background-color: transparent'};
 
   ::before,
   ::after {
@@ -36,16 +36,16 @@ const MenuIcon = styled.div`
     top: -10px;
     ${props =>
       props.isToggleOn
-        ? `transform: rotate(45deg); top: 0; background-color: #ffffff;`
-        : `transform: rotate(0);`};
+        ? 'transform: rotate(45deg); top: 0; background-color: #ffffff;'
+        : 'transform: rotate(0);'};
   }
 
   ::after {
     top: 10px;
     ${props =>
       props.isToggleOn
-        ? `transform: rotate(-45deg); top: 0; background-color: #ffffff;`
-        : `transform: rotate(0)`}
+        ? 'transform: rotate(-45deg); top: 0; background-color: #ffffff;'
+        : 'transform: rotate(0)'}
   }
 `;
 
