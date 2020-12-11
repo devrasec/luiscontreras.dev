@@ -124,6 +124,7 @@ const FrontHero = () => (
           width="228"
           height="228"
           alt="Luis Contreras"
+          priority
         />
       </div>
       <div className="hero-intro">
