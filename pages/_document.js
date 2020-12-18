@@ -3,6 +3,14 @@ import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 import config from '../config/website';
 
+const fontsToPreload = [
+  'raleway-v18-latin-700',
+  'raleway-v18-latin-regular',
+  'raleway-v18-latin-700italic',
+  'raleway-v18-latin-italic',
+  'montserrat-v15-latin-regular',
+  'montserrat-v15-latin-700',
+];
 export default class SiteDocument extends Document {
   static async getInitialProps(ctx) {
     const sheet = new ServerStyleSheet();
@@ -35,7 +43,6 @@ export default class SiteDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
           {process.env.ENV === 'production' && (
             <>
               <script
@@ -56,23 +63,16 @@ export default class SiteDocument extends Document {
               />
             </>
           )}
-          <link
-            rel="preload"
-            as="style"
-            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-          />
-          <link
-            rel="stylesheet"
-            media="print"
-            onLoad="this.onload=null;this.removeAttribute('media');"
-            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-          />
-          <noscript>
+          {fontsToPreload.map(font => (
             <link
-              rel="stylesheet"
-              href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+              key={font}
+              rel="preload"
+              as="font"
+              type="font/woff2"
+              href={`/fonts/${font}.woff2`}
+              crossOrigin="anonymous"
             />
-          </noscript>
+          ))}
           <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
           <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
           <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />

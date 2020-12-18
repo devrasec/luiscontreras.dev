@@ -4,6 +4,67 @@ import { normalize } from 'polished';
 import { tablet } from '../lib/breakpoints';
 
 const GlobalStyle = createGlobalStyle`
+  /* montserrat-regular - latin */
+  @font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+        url('/fonts/montserrat-v15-latin-regular.woff2') format('woff2'),
+        url('/fonts/montserrat-v15-latin-regular.woff') format('woff');
+    font-display: swap;
+  }
+  /* montserrat-700 - latin */
+  @font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    src: local(''),
+        url('/fonts/montserrat-v15-latin-700.woff2') format('woff2'),
+        url('/fonts/montserrat-v15-latin-700.woff') format('woff');
+    font-display: swap;
+  }
+  /* raleway-regular - latin */
+  @font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+        url('/fonts/raleway-v18-latin-regular.woff2') format('woff2'),
+        url('/fonts/raleway-v18-latin-regular.woff') format('woff');
+    font-display: swap;
+  }
+  /* raleway-700 - latin */
+  @font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 700;
+    src: local(''),
+        url('/fonts/raleway-v18-latin-700.woff2') format('woff2'),
+        url('/fonts/raleway-v18-latin-700.woff') format('woff');
+    font-display: swap;
+  }
+  /* raleway-italic - latin */
+  @font-face {
+    font-family: 'Raleway';
+    font-style: italic;
+    font-weight: 400;
+    src: local(''),
+        url('/fonts/raleway-v18-latin-italic.woff2') format('woff2'),
+        url('/fonts/raleway-v18-latin-italic.woff') format('woff');
+    font-display: swap;
+  }
+  /* raleway-700italic - latin */
+  @font-face {
+    font-family: 'Raleway';
+    font-style: italic;
+    font-weight: 700;
+    src: local(''),
+        url('/fonts/raleway-v18-latin-700italic.woff2') format('woff2'),
+        url('/fonts/raleway-v18-latin-700italic.woff') format('woff');
+    font-display: swap;
+  }
+
   ${normalize()};
 
   *,
