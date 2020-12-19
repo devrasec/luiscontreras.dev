@@ -33,7 +33,7 @@ const AboutPage = () => (
         During my 10+ year career as a professional developer, I’ve worked for{' '}
         <strong>Rubycom</strong>, <strong>DICOM</strong>, <strong>Instacarro</strong>,{' '}
         <strong>Iban</strong>, <strong>Quicksort AB</strong>, helping them to ship awesome products.
-        I’m currently working as a Web Developer at Aller Media AB.
+        Currently, I’m working as a Web Developer at Aller Media AB.
       </p>
 
       <p>
@@ -41,14 +41,7 @@ const AboutPage = () => (
         <strong>HTML</strong> and <strong>CSS</strong>. I love <strong>React</strong> and all its
         ecosystem and also like to write performant, clean, and testable code. If you want to see my
         CV, please go to my{' '}
-        <a
-          href="https://www.linkedin.com/in/luiscontreras26/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          LinkedIn profile
-        </a>
-        .
+        <a href="https://www.linkedin.com/in/luiscontreras26/">LinkedIn profile</a>.
       </p>
 
       <p>
@@ -61,11 +54,7 @@ const AboutPage = () => (
         <Link href="/contact">
           <a>contact me</a>
         </Link>{' '}
-        or reach out on{' '}
-        <a href="https://twitter.com/devrasec" rel="noopener noreferrer" target="_blank">
-          Twitter
-        </a>
-        .
+        or reach out on <a href="https://twitter.com/devrasec">Twitter</a>.
       </p>
     </Container>
   </>
