@@ -40,7 +40,7 @@ export default function Post({ postData, mdxSource }) {
   const postUrl = `${config.siteUrl}/blog/${slug}`;
   const dateFormatted = format(parseISO(date), 'Y-M-d');
   const postImageSrc = image ? `/images/posts/${slug}/${image}` : null;
-  const metaImage = postImageSrc && `https://luiscontreras.dev${postImageSrc}`;
+  const jsonLdImage = postImageSrc && `https://luiscontreras.dev${postImageSrc}`;
 
   return (
     <>
@@ -56,7 +56,7 @@ export default function Post({ postData, mdxSource }) {
           },
           images: [
             {
-              url: metaImage,
+              url: `/api/ogimage?text=${encodeURIComponent(title)}`,
             },
           ],
         }}
@@ -70,7 +70,7 @@ export default function Post({ postData, mdxSource }) {
         authorName="Luis Contreras"
         publisherName="Luis Contreras"
         publisherLogo={`${config.siteUrl}/images/logo.jpg`}
-        images={[metaImage]}
+        images={[jsonLdImage]}
         description={summary}
       />
 
