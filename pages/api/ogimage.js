@@ -1,6 +1,13 @@
 import { createCanvas, loadImage, registerFont } from 'canvas';
 import path from 'path';
 
+/**
+ * Split a given string into an array of strings with a specific length.
+ * The strings ar cut preserving the words intact.
+ *
+ * @param {string} str The string to split.
+ * @param {number} maxWidth The maximum length of characters.
+ */
 const wordWrap = (str, maxWidth) => {
   // Regular expression from https://stackoverflow.com/a/51506718
   const regex = new RegExp(`(?![^\\n]{1,${maxWidth}}$)([^\\n]{1,${maxWidth}})\\s`, 'g');
