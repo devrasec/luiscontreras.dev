@@ -11,12 +11,14 @@
     "dev": "next-remote-watch ./content",
     "dev:debug": "NODE_OPTIONS='--inspect' next-remote-watch ./content",
     "build": "next build",
+    "vercel-build": "yum install libuuid-devel libmount-devel && cp /lib64/{libuuid,libmount,libblkid}.so.1 node_modules/canvas/build/Release/ && npm run build",
     "start": "next start",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
     "@styled-system/theme-get": "^5.1.2",
+    "canvas": "^2.6.1",
     "date-fns": "^2.16.1",
     "fast-glob": "^3.2.4",
     "gray-matter": "^4.0.2",
