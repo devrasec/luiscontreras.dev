@@ -56,7 +56,7 @@ export default function Post({ postData, mdxSource }) {
           },
           images: [
             {
-              url: `/api/ogimage?text=${encodeURIComponent(title)}`,
+              url: `${config.siteUrl}/api/ogimage?text=${encodeURIComponent(title)}`,
             },
           ],
         }}
