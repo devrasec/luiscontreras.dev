@@ -100,9 +100,12 @@ export default function Post({ postData, mdxSource }) {
             <BannerStyles>
               <Image
                 src={postImageSrc}
+                layout="responsive"
                 width="720"
                 height="480"
                 alt={`Cover image for ${title}`}
+                loading="eager"
+                sizes="(min-width: 800px) 720px, calc(95.83vw - 28px)"
                 priority
               />
               {imageCredit && (
