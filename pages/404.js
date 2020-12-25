@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { NextSeo } from 'next-seo';
-import Container from '../components/container';
+import Container from '../components/styles/container';
 import Heading from '../components/primitives/heading';
 
 export default function Page404() {

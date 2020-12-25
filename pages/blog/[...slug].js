@@ -10,7 +10,7 @@ import { themeGet } from '@styled-system/theme-get';
 import styled from 'styled-components';
 import { getAllPostSlugs, getPostBySlug } from '../../lib/posts';
 import Heading from '../../components/primitives/heading';
-import Container from '../../components/container';
+import Container from '../../components/styles/container';
 import components from '../../components/mdx';
 import Date from '../../components/date';
 import config from '../../config/website';

@@ -2,7 +2,7 @@ import { NextSeo, BlogJsonLd } from 'next-seo';
 import { format, parseISO } from 'date-fns';
 import { getPosts } from '../lib/posts';
 import Heading from '../components/primitives/heading';
-import Container from '../components/container';
+import Container from '../components/styles/container';
 import PostTeaser from '../components/post-teaser';
 import config from '../config/website';
 

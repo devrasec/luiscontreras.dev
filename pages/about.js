@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { NextSeo } from 'next-seo';
 import config from '../config/website';
 import Heading from '../components/primitives/heading';
-import Container from '../components/container';
+import Container from '../components/styles/container';
 
 const pageDescription = 'Get to know everything about Luis Contreras.';
 

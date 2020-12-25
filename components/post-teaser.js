@@ -3,7 +3,7 @@ import { themeGet } from '@styled-system/theme-get';
 import Link from 'next/link';
 import PostDate from './styles/post-date';
 import TeaserHeading from './styles/teaser-heading';
-import BaseTag from './tag';
+import BaseTag from './primitives/tag';
 import Date from './date';
 
 const Tag = styled(BaseTag)``;

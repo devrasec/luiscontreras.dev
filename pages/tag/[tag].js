@@ -1,7 +1,7 @@
 import { themeGet } from '@styled-system/theme-get';
 import { NextSeo } from 'next-seo';
 import Heading from '../../components/primitives/heading';
-import Container from '../../components/container';
+import Container from '../../components/styles/container';
 import { getAllTags, getPostsByTag } from '../../lib/posts';
 import config from '../../config/website';
 import PostTeaser from '../../components/post-teaser';

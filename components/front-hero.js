@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { untilDesktop, tablet, mobilePlus, large } from '../lib/breakpoints';
 import SocialLinks from './social-links';
-import Button from './button';
+import Button from './primitives/button';
 import Heading from './primitives/heading';
 import { fancyBg } from '../theme/mixins';
 

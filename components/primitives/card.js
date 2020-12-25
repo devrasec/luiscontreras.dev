@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { themeGet } from '@styled-system/theme-get';
 import { rem } from 'polished';
-import { tablet } from '../lib/breakpoints';
-import Heading from './primitives/heading';
+import { tablet } from '../../lib/breakpoints';
+import Heading from './heading';
 
 const CardStyles = styled.div`
   border-radius: 16px;
