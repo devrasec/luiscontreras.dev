@@ -32,8 +32,9 @@ const AboutPage = () => (
       <p>
         During my 10+ year career as a professional developer, I’ve worked for{' '}
         <strong>Rubycom</strong>, <strong>DICOM</strong>, <strong>Instacarro</strong>,{' '}
-        <strong>Iban</strong>, <strong>Quicksort AB</strong>, helping them to ship awesome products.
-        Currently, I’m working as a Web Developer at Aller Media AB.
+        <strong>Iban</strong>, <strong>Quicksort</strong>, <strong>Aller Media</strong>, helping
+        them to ship awesome products. Currently, I’m working as a Software Engineer at{' '}
+        <a href="https://klarna.com/">Klarna</a>.
       </p>
 
       <p>
