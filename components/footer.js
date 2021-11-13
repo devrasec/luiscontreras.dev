@@ -47,7 +47,7 @@ const Footer = () => (
       <SocialLinks iconColor="white" />
 
       <Copyright>
-        <span>Luis Contreras &copy; 2020</span>
+        <span>Luis Contreras &copy; 2021</span>
         <FaLaptopCode title="Code" />
         <FaMugHot title="Coffee" />
         <FaHeart title="Love" />
